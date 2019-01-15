@@ -1,5 +1,5 @@
 from django import forms
-from .models import ContactUs, MyUser
+from .models import ContactUs, MyUser , Department
 
 class UserRegistration(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
@@ -12,7 +12,7 @@ class UserRegistration(forms.ModelForm):
 class ContactUsForm(forms.ModelForm):
     user_name = forms.CharField(required=True)
     user_id = forms.EmailField(required=True)
-    category = forms.CharField(required=False)
+    category = forms.ModelChoiceField(queryset=Department.objects.all()  ,required=False)
     user_message = forms.CharField(required=True,widget=forms.Textarea)
     class Meta:
         model = ContactUs

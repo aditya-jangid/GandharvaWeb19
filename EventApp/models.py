@@ -64,9 +64,13 @@ class Carousel(models.Model):
     src = models.CharField(max_length=200)
 
 class ContactUs(models.Model):
+
+    class Meta:
+        verbose_name_plural= "Contact Us"
+
     user_name = models.CharField(max_length=30)
     user_id = models.EmailField()
-    category = models.CharField(max_length = 100, blank=True, null = True)
+    category = models.ForeignKey(Department, on_delete =models.PROTECT, null=True,blank = True)
     user_message = models.CharField(max_length=300)
 
     def __str__(self):
