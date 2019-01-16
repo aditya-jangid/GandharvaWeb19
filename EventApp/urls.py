@@ -1,7 +1,7 @@
 from django.conf.urls import url, include
 from . import views
 
-
+#Url defined here, can access the page related to the url by adding the path
 urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^events/$',views.event, name='events'),

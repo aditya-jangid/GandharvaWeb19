@@ -3,6 +3,8 @@ from django.contrib.auth.models import AbstractUser, PermissionsMixin
 
 # Create your models here.
 
+
+#Abstract User , it is the extension of the base User model which can be customized
 class MyUser(AbstractUser):
   USER_TYPE_CHOICES = (
       (1, 'Participant'),
@@ -18,6 +20,23 @@ class MyUser(AbstractUser):
   def __str__(self):
      return self.username
 
+#RoleMaster contains all the vaarious roles of users
+class RoleMaster (models.Model):
+    name = models.CharField(max_length=50)
+
+
+    def __str__(self):
+        return self.name
+
+#RoleAssignment assigns the roles to the user
+class RoleAssignment (models.Model):
+    user = models.ForeignKey(MyUser, unique =True, on_delete=models.CASCADE)
+    role = models.ForeignKey(RoleMaster, on_delete=models.PROTECT)
+
+    def __int__(self):
+        return self.name
+
+#EventMaster to handle the events section
 class EventMaster(models.Model):
     event_id = models.IntegerField(primary_key=True)
     event_name = models.CharField(max_length=100)
@@ -33,8 +52,6 @@ class EventMaster(models.Model):
         return self.event_name
 
 # model for Department
-
-
 class Department(models.Model):
     dep_id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=30)
@@ -50,7 +67,7 @@ class EventDepartment(models.Model):
     event = models.ForeignKey(EventMaster, on_delete=models.CASCADE)
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
 
-
+#sponsors model
 class SponsorMaster(models.Model):
     sponsor_name = models.CharField(max_length=30)
     sponsor_logo = models.CharField(max_length=200)
@@ -59,10 +76,11 @@ class SponsorMaster(models.Model):
     def __str__(self):
         return self.sponsor_name
 
-
+#contains media for front-end
 class Carousel(models.Model):
     src = models.CharField(max_length=200)
 
+#ContactUs contains fields for user Services to contact to admin (Foreign Key to Dept)
 class ContactUs(models.Model):
 
     class Meta:
