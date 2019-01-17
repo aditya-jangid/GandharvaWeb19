@@ -6,6 +6,7 @@ from EventApp.models import Department, EventMaster, Carousel, SponsorMaster, Ro
 from .forms import UserRegistration , ContactUsForm , HeadRegistration
 from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
+from EventApp.decorators import user_Role_head
 
 # Create your views here.
 
@@ -108,7 +109,7 @@ def user_login(request):
 @user_passes_test(lambda u: u.is_superuser)
 def RegisterHead(request):
     if request.method == 'POST':
-        form = HeadRegistration(request.POST)
+        form = UserRegistration(request.POST)
         if form.is_valid():
             user=form.save()
             username = form.cleaned_data.get('username')
@@ -123,7 +124,7 @@ def RegisterHead(request):
             print (form.errors)
 
     else:
-        form = HeadRegistration()
+        form = UserRegistration()
 
     return render(request, 'events/RegisterHead.html', {'form': form})
 
