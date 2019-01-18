@@ -1,10 +1,11 @@
 from django.conf.urls import url, include
 from . import views
 
-#Url defined here, can access the page related to the url by adding the path
+# Url defined here, can access the page related to the url by adding the path
 urlpatterns = [
-    url(r'^$', views.home, name='home'),
-    url(r'^events/$',views.event, name='events'),
+    # url(r'^$', views.home, name='home'),
+    url(r'^$', views.comingSoon, name='comingSoon'),
+    url(r'^events/$', views.event, name='events'),
     url(r'^events/details/$', views.details, name='details'),
     url(r'^contactus/$', views.contactus, name='contactus'),
     url(r'^login/register/$', views.register, name='register'),
@@ -13,6 +14,3 @@ urlpatterns = [
     url(r'^auth/', include('social_django.urls', namespace='social')),
     url(r'^RegisterHead/$', views.RegisterHead, name='RegisterHead'),
 ]
-
-
-

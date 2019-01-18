@@ -23,6 +23,16 @@ def home(request):
 
     return render(request, 'gandharva/index.html', args)
 
+#ComingSoon Page
+def comingSoon(request):
+
+    arg = {
+        'carouselImage': Carousel.objects.all(),
+        'gandharvaDate': 'March 28, 2019'
+    }
+
+    return render(request, 'gandharva/comingSoon.html', arg)
+
 #Events page of all Departments
 def event(request):
     if request.POST:
