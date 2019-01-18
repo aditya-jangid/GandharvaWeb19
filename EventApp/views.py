@@ -27,11 +27,12 @@ def home(request):
 def event(request):
     if request.POST:
         dept = request.POST.get('dept') + ' Events'
+        dept_id = request.POST.get('deptID')
     else:
         dept = 'All Events'
     args1 = {
         'pageTitle': dept,
-        'events': EventMaster.objects.all(),
+        'events': EventMaster.objects.filter(under_which_department=dept_id),
     }
     return render(request, 'events/event1.html', args1)
 

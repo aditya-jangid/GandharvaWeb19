@@ -36,20 +36,6 @@ class RoleAssignment (models.Model):
     def __int__(self):
         return self.name
 
-#EventMaster to handle the events section
-class EventMaster(models.Model):
-    event_id = models.IntegerField(primary_key=True)
-    event_name = models.CharField(max_length=100)
-    num_of_winners = models.IntegerField()
-    team_size = models.IntegerField()
-    entry_fee = models.IntegerField()
-    objective = models.CharField(max_length=1000)
-    round1 = models.CharField(max_length=1000)
-    round2 = models.CharField(max_length=1000)
-    rules = models.CharField(max_length=1000)
-
-    def __str__(self):
-        return self.event_name
 
 # model for Department
 class Department(models.Model):
@@ -61,6 +47,24 @@ class Department(models.Model):
 
     def __str__(self):
         return self.name
+
+
+# EventMaster to handle the events section
+class EventMaster(models.Model):
+    event_id = models.IntegerField(primary_key=True)
+    event_name = models.CharField(max_length=100)
+    num_of_winners = models.IntegerField()
+    team_size = models.IntegerField()
+    entry_fee = models.IntegerField()
+    objective = models.CharField(max_length=1000)
+    round1 = models.CharField(max_length=1000)
+    round2 = models.CharField(max_length=1000)
+    rules = models.CharField(max_length=1000)
+    under_which_department = models.ForeignKey(Department, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.event_name
+
 
 
 class EventDepartment(models.Model):
