@@ -28,7 +28,7 @@ def comingSoon(request):
 
     arg = {
         'carouselImage': Carousel.objects.all(),
-        'gandharvaDate': 'March 28, 2019'
+        'gandharvaDate': 'March 20, 2019'
     }
 
     return render(request, 'gandharva/comingSoon.html', arg)

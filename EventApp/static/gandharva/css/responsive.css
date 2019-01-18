@@ -50,6 +50,10 @@
         z-index: 10;
     }
 
+     #myCountdown{
+        left: 16vw;
+    }
+
 }
 
 /* sm */
@@ -112,6 +116,10 @@
 
     .twit {
         left: -5%;
+    }
+
+     #myCountdown{
+        left: 16vw;
     }
 
 }
@@ -272,6 +280,10 @@
     .about-content {
         width: 100%;
         padding: 70px 25px 110px;
+    }
+
+     #myCountdown{
+        left: 16vw;
     }
 
 }
@@ -447,6 +459,10 @@
     .contact-section {
         background-position: left 0 bottom 0;
         background-size: cover;
+    }
+
+    #myCountdown{
+        left: 16vw;
     }
 
 }
