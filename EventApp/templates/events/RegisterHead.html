@@ -16,41 +16,63 @@
     {% csrf_token %}
 
 
-    {% if form.non_field_errors %}
+    {% if userform.non_field_errors %}
     <ul>
-            {% for error in form.non_field_errors %}
+            {% for error in userform.non_field_errors %}
                 <li>{{ error }}</li>
             {% endfor %}
         </ul>
     {% endif %}
-    {% if form.name.errors %}
+    {% if userform.name.errors %}
         <ul>
-            {% for error in form.name.errors %}
+            {% for error in userform.name.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+     {% if roleform.non_field_errors %}
+    <ul>
+            {% for error in roleform.non_field_errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% if roleform.name.errors %}
+        <ul>
+            {% for error in roleform.name.errors %}
                 <li>{{ error }}</li>
             {% endfor %}
         </ul>
     {% endif %}
     <div class="form-group">
-        <input id="name" type="text" class="form-control" name="user_name"
+        <input id="name" type="text" class="form-control" name="username"
                placeholder="Name">
-        {{ form.user_name.errors }}
+        {{ userform.username.errors }}
     </div>
     <div class="form-group">
-        <input id="email" type="email" class="form-control" name="user_id"
+        <input id="email" type="email" class="form-control" name="email"
                placeholder="Email">
-        {{ form.user_id.errors }}
+        {{ userform.email.errors }}
     </div>
 
     <div class = "form-group">
-            <input id ="password" type = "text" name="user_password" placeholder="password">
-        {{form.user_password.errors}}
+            <input id ="password" type = "password" name="password" placeholder="password">
+
     </div>
-
-
-
-
-    <button type="submit">Submit</button>
+    <div class="form-group">
+        Category :
+        <select name="name">
+        {% for role in roles %}
+        <option value="{{role.pk}}">{{role.name}}</option>
+            {% endfor %}
+         </select>
+        {{ roleform.name.errors }}
+    </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary pull-right">Register</button>
+        </div>
 </form>
+
      <br>
   <p><strong>-- OR --</strong></p>
   <a href="{% url 'social:begin' 'google-oauth2' %}">SignUp with Google</a><br>

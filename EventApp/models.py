@@ -6,16 +6,6 @@ from django.contrib.auth.models import AbstractUser, PermissionsMixin
 
 #Abstract User , it is the extension of the base User model which can be customized
 class MyUser(AbstractUser):
-  USER_TYPE_CHOICES = (
-      (1, 'Participant'),
-      (2, 'Event Head'),
-      (3, 'Department Head'),
-      (4, 'Joint Head'),
-      (5, 'Gandharva Incharge'),
-      (6, 'admin')
-  )
-
-  user_type = models.PositiveSmallIntegerField(choices=USER_TYPE_CHOICES, default = 1)
 
   def __str__(self):
      return self.username
@@ -30,7 +20,7 @@ class RoleMaster (models.Model):
 
 #RoleAssignment assigns the roles to the user
 class RoleAssignment (models.Model):
-    user = models.ForeignKey(MyUser, unique =True, on_delete=models.CASCADE)
+    user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
     role = models.ForeignKey(RoleMaster, on_delete=models.PROTECT)
 
     def __int__(self):

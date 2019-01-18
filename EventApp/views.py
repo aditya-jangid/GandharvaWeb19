@@ -2,8 +2,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login , logout
 from django.urls import reverse
-from EventApp.models import Department, EventMaster, Carousel, SponsorMaster, RoleAssignment, RoleMaster
-from .forms import UserRegistration , ContactUsForm , HeadRegistration
+from EventApp.models import Department, EventMaster, Carousel, SponsorMaster, RoleAssignment, RoleMaster, MyUser
+from .forms import UserRegistration , ContactUsForm, RoleMasterForm
 from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
 from EventApp.decorators import user_Role_head
@@ -106,28 +106,40 @@ def user_login(request):
         else:
             return render(request, 'events/login.html', {})
 
+def payment (request):
+    return render(request, 'user/paymentDetails.html', {})
+
 #Head Login View only to be used for Heads
 @user_passes_test(lambda u: u.is_superuser)
 def RegisterHead(request):
+    Roles = RoleMaster.objects.all();
     if request.method == 'POST':
-        form = UserRegistration(request.POST)
-        if form.is_valid():
-            user=form.save()
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
+        userform = UserRegistration(request.POST)
+        roleform = RoleMasterForm(request.POST)
+        if userform.is_valid() and roleform.is_valid():
+            user = userform.save()
+            username = userform.cleaned_data.get('username')
+            password = userform.cleaned_data.get('password')
             user.set_password(password)
             user.save()
+            roleassign = RoleAssignment()
+            roleassign.user=user
+            roleassign.role = roleform.cleaned_data.get('name')
+            roleassign.save()
       #       group = Group.objects.get(name='groupname')
       #      user.groups.add(group)
       #login(request, user, backend='social_core.backends.google.GoogleOAuth2')
             return redirect('home')
         else:
-            print (form.errors)
+            print (userform.errors)
+            print (roleform.errors)
+
 
     else:
-        form = UserRegistration()
+        userform = UserRegistration()
+        roleform = RoleMasterForm
 
-    return render(request, 'events/RegisterHead.html', {'form': form})
+    return render(request, 'events/RegisterHead.html', {'userform': userform , 'roleform': roleform, 'roles':Roles})
 
 
 

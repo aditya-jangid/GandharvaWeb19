@@ -1,6 +1,6 @@
 #include the various features to be used in forms here
 from django import forms
-from .models import ContactUs, MyUser , Department
+from .models import ContactUs, MyUser , Department, RoleMaster
 
 class UserRegistration(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
@@ -20,12 +20,9 @@ class ContactUsForm(forms.ModelForm):
         fields = ['user_name','user_id','user_message','category']
 
 
-
-class HeadRegistration(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput())
-    user_type= forms.IntegerField()
+class RoleMasterForm(forms.ModelForm):
+    name = forms.ModelChoiceField(queryset=RoleMaster.objects.all() ,required=False)
     class Meta:
-        model = MyUser
-        fields = ['username','email','password','user_type']
-
+        model = RoleMaster
+        fields = ['name']
 
