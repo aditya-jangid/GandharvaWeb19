@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+{% block css %}
+    <link href="{% static 'user/css/paymentDetails.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+    <h1>Payment Details</h1>
+
+{% block scripts %}
+        <script type="text/javascript" src="{% static 'user/js/paymentDetails.js' %}"></script>
+    {% endblock %}
+
+{% endblock %}

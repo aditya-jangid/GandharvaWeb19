@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+{% block css %}
+    <link href="{% static 'user/css/userProfile.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+    <h1>User Profile</h1>
+
+{% block scripts %}
+        <script type="text/javascript" src="{% static 'user/js/userProfile.js' %}"></script>
+    {% endblock %}
+
+{% endblock %}
