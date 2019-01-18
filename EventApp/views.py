@@ -18,7 +18,7 @@ def home(request):
         'events': Department.objects.all(),
         'sponsors': SponsorMaster.objects.all(),
         'carouselImage': Carousel.objects.all(),
-        'gandharvaDate': 'March 18, 2019'
+        'gandharvaDate': 'March 20, 2019'
     }
 
     return render(request, 'gandharva/index.html', args)
