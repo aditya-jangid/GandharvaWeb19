@@ -50,9 +50,9 @@
         z-index: 10;
     }
 
-     #myCountdown{
-        left: 16vw;
-    }
+     /*#myCountdown{*/
+        /*left: 6vw;*/
+    /*}*/
 
 }
 
@@ -118,9 +118,9 @@
         left: -5%;
     }
 
-     #myCountdown{
-        left: 16vw;
-    }
+     /*#myCountdown{*/
+        /*left: 6vw;*/
+    /*}*/
 
 }
 
@@ -283,7 +283,7 @@
     }
 
      #myCountdown{
-        left: 16vw;
+        left: 6vw;
     }
 
 }
@@ -462,7 +462,7 @@
     }
 
     #myCountdown{
-        left: 16vw;
+        left: 6vw;
     }
 
 }
