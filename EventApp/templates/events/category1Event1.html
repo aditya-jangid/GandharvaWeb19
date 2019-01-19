@@ -25,27 +25,24 @@
         data-sal-delay="300">{{ event.event_name }}</h1>
     <br>
     <div class="container">
+        {% if event.objective %}
         <h1 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">Objective</h1>
         <p data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">{{ event.objective }}</p>
+        {% endif %}
     </div>
     <br>
     <div class="container">
-        <h1 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">Round 1</h1>
-        <p data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">{{ event.round1 }}</p>
+        {% if event.rounds %}
+        <h1 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">Rounds</h1>
+        <p data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">{{ event.rounds }}</p>
+        {% endif %}
     </div>
     <br>
     <div class="container">
-        <h1 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">Round 2</h1>
-        <p data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">{{ event.round2 }}</p>
-    </div>
-    <br>
-    <div class="container">
+        {% if event.rules %}
         <h1 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">Rules</h1>
-        <ol>
-            {% for rule in rules %}
-                <li data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">{{ rule }}</li>
-            {% endfor %}
-        </ol>
+        <p data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">{{ event.rules }}</p>
+        {% endif %}
     </div>
     <br>
     <div class="container">
