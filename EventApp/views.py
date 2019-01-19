@@ -2,7 +2,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login , logout
 from django.urls import reverse
-from EventApp.models import Department, EventMaster, Carousel, SponsorMaster, RoleAssignment, RoleMaster, MyUser
+from EventApp.models import Department, EventMaster, Carousel, SponsorMaster, RoleAssignment, RoleMaster, MyUser, EventDepartment
 from .forms import UserRegistration , ContactUsForm, RoleMasterForm
 from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
@@ -26,13 +26,13 @@ def home(request):
 #Events page of all Departments
 def event(request):
     if request.POST:
-        dept = request.POST.get('dept') + ' Events'
-        dept_id = request.POST.get('deptID')
+        dept = request.POST.get('dept')
+        dept_choose = Department.objects.get(name=dept)
     else:
         dept = 'All Events'
     args1 = {
         'pageTitle': dept,
-        'events': EventMaster.objects.filter(under_which_department=dept_id),
+        'events': EventDepartment.objects.filter(department = dept_choose),
     }
     return render(request, 'events/event1.html', args1)
 

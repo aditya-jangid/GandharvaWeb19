@@ -24,7 +24,7 @@ class RoleAssignment (models.Model):
     role = models.ForeignKey(RoleMaster, on_delete=models.PROTECT)
 
     def __int__(self):
-        return self.name
+        return self.role.name
 
 
 # model for Department
@@ -50,7 +50,6 @@ class EventMaster(models.Model):
     round1 = models.CharField(max_length=1000)
     round2 = models.CharField(max_length=1000)
     rules = models.CharField(max_length=1000)
-    under_which_department = models.ForeignKey(Department, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.event_name
@@ -60,6 +59,9 @@ class EventMaster(models.Model):
 class EventDepartment(models.Model):
     event = models.ForeignKey(EventMaster, on_delete=models.CASCADE)
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.event.event_name
 
 #sponsors model
 class SponsorMaster(models.Model):
