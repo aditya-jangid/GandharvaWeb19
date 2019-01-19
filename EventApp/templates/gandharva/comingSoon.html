@@ -19,7 +19,7 @@
 </head>
 <body>
 <section>
-    <div class="container-fluid" style="background-color: rgba(0,0,0,0.8); padding:0;height:auto;width: 100%">
+    <div class="container-fluid" style="background-color: rgba(0,0,0,0.8); padding:0;height:500px;width: 100%">
         <div class="row">
             <div class="col-12">
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel"
@@ -41,45 +41,47 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-12" style="position: absolute;top:36vh;left:8vw;z-index: 200">
-                    <h2 style="color: #fff;padding-bottom:8px;margin-left: 18vw;font-size: 6vw">
-                        Coming Soon in</h2>
-                    <div id="myCountdown">
-                        <ul id="countdown">
-                            <li>
-                                <span class="days time-font">00</span>
-                                <p>Days </p>
-                            </li>
-                            <li>
-                                <span class="hours time-font">00</span>
-                                <p class="">Hours </p>
-                            </li>
-                            <li>
-                                <span class="minutes time-font">00</span>
-                                <p class="">Minutes</p>
-                            </li>
-                            <li>
-                                <span class="seconds time-font">00</span>
-                                <p class="">Seconds</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-
-            </div>
             <div id="particle">
                 <div id="particles-js"></div>
-                <h1 style="position: absolute;top: 8vh;left: 20vw; font-size: 10.2vw;margin-bottom:2vh">
+                <h1 style="position: absolute;top:22vh;left: 20vw; font-size: 10.2vw;margin-bottom:2vh">
                     Gandharva'19</h1>
             </div>
 
         </div>
     </div>
 </section>
-
+<section id="explore">
+    <div class="container-fluid">
+        <div class="row">
+            <div class=" col-md-4 watch">
+                <img class="img-fluid" src="{% static 'gandharva/images/watch.png' %}" alt="">
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <h1 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="100"
+                    data-sal-duration="800">Our next event in</h1>
+                <ul id="countdown" data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="100"
+                    data-sal-duration="800">
+                    <li>
+                        <span class="days time-font">00</span>
+                        <p>Days </p>
+                    </li>
+                    <li>
+                        <span class="hours time-font">00</span>
+                        <p class="">Hours </p>
+                    </li>
+                    <li>
+                        <span class="minutes time-font">00</span>
+                        <p class="">Minutes</p>
+                    </li>
+                    <li>
+                        <span class="seconds time-font">00</span>
+                        <p class="">Seconds</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 <footer id="footer">
     <div class="container">
         <div class="text-center">
@@ -118,6 +120,8 @@
 <script type="text/javascript" src="{% static 'gandharva/js/coundown-timer.js' %}"></script>
 <script> var GandharvaDate = "{{gandharvaDate}}";</script>
 <script type="text/javascript" src="{% static 'gandharva/js/main.js' %}"></script>
+<script type="text/javascript" src="{% static 'gandharva/js/slick.min.js' %}"></script>
+
 <script type="text/javascript" src="{% static 'gandharva/js/particles.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'gandharva/js/home.js' %}"></script>
 </body>
