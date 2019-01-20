@@ -201,11 +201,10 @@
                     frameborder="0" style="border:0;width:100%;height:100%" allowfullscreen></iframe>
         </div>
     </section>
-    {% block scripts %}
-        <script type="text/javascript" src="{% static 'gandharva/js/coundown-timer.js' %}"></script>
-        <script type="text/javascript" src="{% static 'gandharva/js/main.js' %}"></script>
-        <script type="text/javascript" src="{% static 'gandharva/js/slick.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'gandharva/js/particles.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'gandharva/js/home.js' %}"></script>
-    {% endblock %}
+{% endblock %}
+{% block scripts %}
+    <script type="text/javascript" src="{% static 'gandharva/js/coundown-timer.js' %}"></script>
+    <script type="text/javascript" src="{% static 'gandharva/js/slick.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'gandharva/js/particles.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'gandharva/js/home.js' %}"></script>
 {% endblock %}
