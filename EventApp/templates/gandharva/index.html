@@ -44,15 +44,15 @@
         </div>
     </section>
 
-    <section id="explore">
+    <section id="explore" style="background-image: url('{% static "gandharva/img/nextEvent.JPG" %}');background-size: cover">
         <div class="container-fluid">
             <div class="row">
                 <div class=" col-md-4 watch">
                     <img class="img-fluid" src="{% static 'gandharva/images/watch.png' %}" alt="">
                 </div>
                 <div class="col-sm-12 col-md-6">
-                    <h1 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="100"
-                        data-sal-duration="800">Our next event in</h1>
+                    <h2 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="100"
+                        data-sal-duration="800">Our next event in</h2>
                     <ul id="countdown" data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="100"
                         data-sal-duration="800">
                         <li>
@@ -76,15 +76,15 @@
             </div>
         </div>
     </section>
-    <div class="col-sm-12" style="height:50px; background-color:#33888f"></div>
+    <div class="col-sm-12" style="height:10px; background-color:#33888f"></div>
     <section id="eventSection">
         <img class="img-fluid" src="{% static 'gandharva/img/band.png' %}">
         <div class="container-fluid" style="background-color:#33888F">
-            <h1 style="text-align: center;padding-top:4vh;color:#fff;font-weight: bold" data-sal="slide-up"
+            <h1 style="text-align: center;padding-top:1vh;color:#fff;font-weight: bold" data-sal="slide-up"
                 data-sal-easing="ease-out-bounce"
                 data-sal-delay="100" data-sal-duration="800">
                 Events</h1>
-            <br>
+
             {% for event in events %}
                 {% if forloop.first %}
                     <div class="row">{% endif %}
@@ -102,7 +102,6 @@
                         More
                     </button>
                 </form>
-
             </div>
             {% if forloop.counter|divisibleby:3 %}
                 </div>
@@ -119,11 +118,11 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6">
-                    <img style="margin-top: 4vh" class="img-fluid" src="{% static 'gandharva/images/guitar2.jpg' %}"
+                    <img style="margin-top: 1vh" class="img-fluid" src="{% static 'gandharva/images/guitar2.jpg' %}"
                          alt="guitar">
                 </div>
                 <div class="col-sm-6">
-                    <h2 style="margin-top: 4vh;text-align: center;font-weight: bold" data-sal="slide-up"
+                    <h2 style="margin-top: 2vh;text-align: center;font-weight: bold" data-sal="slide-up"
                         data-sal-easing="ease-out-bounce" data-sal-delay="100" data-sal-duration="800">About
                         Gandharva</h2>
                     <p style="margin-top: 4vh;text-align: center" data-sal="slide-up"
@@ -134,14 +133,20 @@
                         looking to
                         move to the next level. Lorem Ipsum is simply dummy text of the printing and typesetting
                         industry. Lorem
-                        Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                        Ipsum has been the industry's standard dummy text ever since the 1500s
+                        Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry. Lorem
+                        Ipsum has been the industry's standard dummy text ever since the 1500s
+                        Lorem
+                        Ipsum has been the industry's standard dummy text ever since the 1500s
+                    </p>
 
-                    <div style="display: flex;align-items: center;justify-content: center; margin-bottom:22px">
-                        <button data-sal="slide-up"
-                                data-sal-easing="ease-out-bounce" data-sal-delay="100" data-sal-duration="800"
-                                class="btn btn-primary">View Date & Place
-                            <i class="fa fa-angle-right"></i></button>
-                    </div>
+                    {#                    <div style="display: flex;align-items: center;justify-content: center; margin-bottom:22px">#}
+                    {#                        <button data-sal="slide-up"#}
+                    {#                                data-sal-easing="ease-out-bounce" data-sal-delay="100" data-sal-duration="800"#}
+                    {#                                class="btn btn-primary">View Date & Place#}
+                    {#                            <i class="fa fa-angle-right"></i></button>#}
+                    {#                    </div>#}
                 </div>
             </div>
         </div>
