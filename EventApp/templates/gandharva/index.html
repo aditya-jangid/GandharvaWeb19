@@ -6,6 +6,7 @@
     <link href="{% static 'gandharva/css/slick.min.css' %}" rel="stylesheet">
     <link href="{% static 'gandharva/css/responsive.css' %}" rel="stylesheet">
     <link href="{% static 'gandharva/css/home.css' %}" rel="stylesheet">
+
     <script>
         var GandharvaDate = "{{gandharvaDate}}";
     </script>
@@ -13,10 +14,10 @@
 
 {% block body %}
     <section>
-        <div class="container-fluid" style="background-color: rgba(0,0,0,0.8); padding:0;height: auto;width: 100%">
+        <div class="container-fluid"
+             style="background-color: rgba(0,0,0,0.8); padding:0;height:auto;width: 100%;margin-top:40px">
             <div class="row">
                 <div class="col-12">
-
                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel"
                          data-interval="3000" style="width: 100%;">
                         <div class="carousel-inner">
@@ -38,7 +39,7 @@
                 </div>
                 <div id="particle">
                     <div id="particles-js"></div>
-                    <h1>Gandharva</h1>
+                    {#                    <h1>Gandharva</h1>#}
                 </div>
             </div>
         </div>
@@ -159,7 +160,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                    <br>
+                        <br>
                         <h2 class="text-center font-weight-bold text-white" style="padding-top: 6px" data-sal="slide-up"
                             data-sal-easing="ease-out-bounce" data-sal-delay="100" data-sal-duration="800">Our
                             Sponsors</h2>
