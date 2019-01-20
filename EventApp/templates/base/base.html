@@ -38,14 +38,31 @@
                     Events
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    {% for event in events %}
                         <form method="post" action="{% url 'events' %}">
                             {% csrf_token %}
-                            <input type="hidden" name="dept" value={{ event.name }}>
-                            <button type="submit" class="dropdown-item dropdownStyle">{{ event.name }}</button>
+                            <input type="hidden" name="dept" value="Computer">
+                            <button type="submit" class="dropdown-item dropdownStyle">Computer</button>
                         </form>
-
-                    {% endfor %}
+                        <form method="post" action="{% url 'events' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="dept" value="IT">
+                            <button type="submit" class="dropdown-item dropdownStyle">IT</button>
+                        </form>
+                         <form method="post" action="{% url 'events' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="dept" value="ENTC">
+                            <button type="submit" class="dropdown-item dropdownStyle">ENTC</button>
+                        </form>
+                        <form method="post" action="{% url 'events' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="dept" value=Mechanical>
+                            <button type="submit" class="dropdown-item dropdownStyle">Mechanical</button>
+                        </form>
+                        <form method="post" action="{% url 'events' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="dept" value=Civil>
+                            <button type="submit" class="dropdown-item dropdownStyle">Civil</button>
+                        </form>
                 </div>
             </li>
             <li class="nav-item">
