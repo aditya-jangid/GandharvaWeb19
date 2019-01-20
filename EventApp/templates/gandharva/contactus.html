@@ -99,13 +99,15 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script type="text/javascript" src="{% static 'gandharva/js/home.js' %}"></script>
 
+        {% if success_form %}
         <script>
         //Write your logic here...
         //You can call functions directly as below:
-
-        // SweetAlertSuccess();
+        SweetAlertSuccess();
         // SweetAlertFailure();
 
         </script>
+        {% endif %}
+
     {% endblock %}
 {% endblock %}

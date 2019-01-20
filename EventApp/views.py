@@ -7,6 +7,7 @@ from .forms import UserRegistration , ContactUsForm, RoleMasterForm
 from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
 from EventApp.decorators import user_Role_head
+import sweetify
 
 # Create your views here.
 
@@ -51,17 +52,18 @@ def details(request):
 
 #ContactUs View (Form created)
 def contactus(request):
+    success_form = False
     if request.method == 'POST':
         form = ContactUsForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('contactus')
+            success_form = True
         else:
             print(form.errors)
     else:
         form = ContactUsForm()
 
-    return render(request, 'gandharva/contactus.html',{'form':form})
+    return render(request, 'gandharva/contactus.html',{'form':form, 'success_form' : success_form})
 
 #Registration for normal User and log in user after registration Immediately
 def register(request):
