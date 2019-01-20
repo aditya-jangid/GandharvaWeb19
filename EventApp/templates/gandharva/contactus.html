@@ -4,11 +4,10 @@
 {% block css %}
     <link href="{% static 'gandharva/css/responsive.css' %}" rel="stylesheet">
     <link href="{% static 'gandharva/css/contactUs.css' %}" rel="stylesheet">
-    <link href="{% static 'gandharva/css/sal.css' %}" rel="stylesheet">
 {% endblock %}
 {% block body %}
-    <br><br><br>
-    <section id="contact" style="background-image:url('{% static 'gandharva/img/p.jpg' %}');">
+    <br><br>
+    <section id="contact">
         <div class="contact-section" style="background-image:url('{% static 'gandharva/img/p.jpg' %}');">
             <div class="container-fluid">
                 <div class="row">
@@ -93,19 +92,15 @@
                 </div>
             </div>
         </div>
-        <br><br>
     </section>
-    {% block scripts %}
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <script type="text/javascript" src="{% static 'gandharva/js/home.js' %}"></script>
-
-        <script>
+{% endblock %}
+{% block scripts %}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="{% static 'gandharva/js/contactUs.js' %}"></script>
+    <script>
         //Write your logic here...
         //You can call functions directly as below:
-
         // SweetAlertSuccess();
         // SweetAlertFailure();
-
-        </script>
-    {% endblock %}
+    </script>
 {% endblock %}

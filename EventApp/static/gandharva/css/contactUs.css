@@ -11,6 +11,13 @@ html, body {
     background-color: #135f89;
 }
 
+#footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
 .contact-section {
     background-color: #135f89;
     background-size: cover;
