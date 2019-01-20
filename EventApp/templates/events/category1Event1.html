@@ -18,48 +18,39 @@
 {% endblock %}
 
 {% block body %}
-    <br><br>
-    <h1 class="title" data-sal="slide-up" data-sal-easing="ease-out-bounce"
-        data-sal-delay="300">{{ event.event_name }}</h1>
+    <div class="container-fluid"
+         style="background:linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('{% static 'events/img/banner/mechBanner.jpg' %}');width: 100%;height:300px;background-size:cover;">
+        <h1 class="title" data-sal="slide-up" data-sal-easing="ease-out-bounce"
+            data-sal-delay="300">{{ event.event_name }}</h1>
+    </div>
     <br>
     <div class="container">
         {% if event.objective %}
-            <h1 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">Objective</h1>
+            <h3 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">Objective</h3>
             <pre data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">{{ event.objective }}</pre>
         {% endif %}
     </div>
     <br>
     <div class="container">
         {% if event.rounds %}
-            <h1 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">Rounds</h1>
+            <h3 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">Rounds</h3>
             <pre data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">{{ event.rounds }}</pre>
         {% endif %}
     </div>
     <br>
     <div class="container">
         {% if event.rules %}
-            <h1 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">Rules</h1>
-            <pre data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">{{ event.rules }}</pre>
+            <h3 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">Rules</h3>
+            <pre style="overflow:auto" data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">{{ event.rules }}</pre>
         {% endif %}
     </div>
     <br>
     <div class="container">
-        <h1 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">Team and Fee Structure</h1>
+        <h3 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">Team and Fee Structure</h3>
         <p data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">Max {{ event.team_size }}
             Participants per Team & ₹ {{ event.entry_fee }} per team.</p>
     </div>
     <br><br>
-    {#    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"#}
-    {#            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"#}
-    {#            crossorigin="anonymous"></script>#}
-    {#    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"#}
-    {#            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"#}
-    {#            crossorigin="anonymous"></script>#}
-    {#    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"#}
-    {#            integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"#}
-    {#            crossorigin="anonymous"></script>#}
-    {#    <script src="{% static 'events/js/sal.js' %}"></script>#}
-    {#    <script src="{% static 'events/js/slick.min.js' %}"></script>#}
     {% block scripts %}
         <script src="{% static 'events/js/events.js' %}"></script>
     {% endblock %}
