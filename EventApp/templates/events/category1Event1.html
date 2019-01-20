@@ -4,8 +4,6 @@
 
 {% block css %}
     <link rel="stylesheet" type="text/css" href="{% static 'events/css/events.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'events/css/slick.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'events/css/sal.css' %}">
 {% endblock %}
 
 {% block dropdown %}
@@ -26,22 +24,22 @@
     <br>
     <div class="container">
         {% if event.objective %}
-        <h1 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">Objective</h1>
-        <p data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">{{ event.objective }}</p>
+            <h1 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">Objective</h1>
+            <p data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">{{ event.objective }}</p>
         {% endif %}
     </div>
     <br>
     <div class="container">
         {% if event.rounds %}
-        <h1 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">Rounds</h1>
-        <p data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">{{ event.rounds }}</p>
+            <h1 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">Rounds</h1>
+            <p data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">{{ event.rounds }}</p>
         {% endif %}
     </div>
     <br>
     <div class="container">
         {% if event.rules %}
-        <h1 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">Rules</h1>
-        <p data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">{{ event.rules }}</p>
+            <h1 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">Rules</h1>
+            <p data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">{{ event.rules }}</p>
         {% endif %}
     </div>
     <br>
@@ -51,17 +49,19 @@
             Participants per Team & ₹ {{ event.entry_fee }} per team.</p>
     </div>
     <br><br>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
-            integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
-            crossorigin="anonymous"></script>
-    <script src="{% static 'events/js/sal.js' %}"></script>
-    <script src="{% static 'events/js/slick.min.js' %}"></script>
-    <script src="{% static 'events/js/events.js' %}"></script>
+    {#    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"#}
+    {#            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"#}
+    {#            crossorigin="anonymous"></script>#}
+    {#    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"#}
+    {#            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"#}
+    {#            crossorigin="anonymous"></script>#}
+    {#    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"#}
+    {#            integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"#}
+    {#            crossorigin="anonymous"></script>#}
+    {#    <script src="{% static 'events/js/sal.js' %}"></script>#}
+    {#    <script src="{% static 'events/js/slick.min.js' %}"></script>#}
+    {% block scripts %}
+        <script src="{% static 'events/js/events.js' %}"></script>
+    {% endblock %}
 
 {% endblock %}
