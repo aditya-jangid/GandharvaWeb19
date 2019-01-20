@@ -29,53 +29,12 @@ html, body {
     font-family: 'Lobster', cursive;
 }
 
-/*
-.navbar {
-    background-color: #1B7B98 !important;
-    opacity: 1;
-}
-
-nav .navbar-nav li a {
-    color: #000000 !important;
-    opacity: 1;
-}
-
-.navbar-nav > li > .dropdown-menu {
-    opacity: 1;
-    background-color: #1B7B98;
-}
-
-.navbar-nav > li > .dropdown-menu :hover {
-    background-color: #fff;
-}
-
-.solid {
-    opacity: 1;
-}
-
-.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
-    background-color: #fff;
-    color: #16728f !important;
-}
-
-nav li .active a {
-    background-color: #fff;
-    color: #16728f !important;
-}
-
-.nav.navbar-nav li a {
-    color: white !important;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin: 4px;
-}
-*/
 /*************************
 *******Explore CSS******
 **************************/
 
 #explore {
-    background-color:#6fa4c3;
+    background-color: #6fa4c3;
     /*background-image: url("../images/event-bg.jpg");*/
     /*background-position: center bottom;*/
     /*background-size: contain;*/
@@ -84,7 +43,7 @@ nav li .active a {
     position: relative;
     overflow: hidden;
     padding-top: 4vh;
-    padding-bottom:8vh;
+    padding-bottom: 8vh;
 }
 
 .watch img {
@@ -220,7 +179,6 @@ nav li .active a {
 
 .about-content p {
     font-size: 17px;
-    /*font-family: 'Dosis',sans-serif;*/
 }
 
 #about .btn-primary {
@@ -353,16 +311,17 @@ img {
     z-index: 10;
     background-color: #b380ff;
     margin-bottom: 4vh;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
     opacity: 0.84;
-
+    height: 100px;
+    border-radius: 25px;
 }
 
 .eventTitle {
     z-index: 100;
     padding-top: 4vh;
-    padding-bottom: 2vh;
+    padding-bottom: 1vh;
     padding-left: 2vw;
     color: #fff;
     font-weight: bold;
@@ -374,7 +333,7 @@ img {
 
 .eventDescription {
     z-index: 100;
-    padding-top: 4vh;
+    padding-top: 1vh;
     padding-bottom: 2vh;
     padding-left: 2vw;
     color: #fff;
@@ -391,11 +350,10 @@ img {
     border: none;
     color: #FFFFFF;
     text-align: center;
-    padding: 1vw;
     transition: all 0.5s;
     cursor: pointer;
-    margin-bottom: 4vh;
-    margin-left: 2vw;
+    position: absolute;
+    bottom: 4vh;
     font-weight: bold;
 }
 
@@ -405,6 +363,7 @@ img {
 
 .hvr-bounce-to-top {
     display: inline-block;
+    border-radius: 25px;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
@@ -435,6 +394,7 @@ img {
     transition-duration: 0.5s;
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
+    border-radius: 25px;
 }
 
 .hvr-bounce-to-top:hover {
@@ -458,7 +418,6 @@ img {
 
 .orange-fade {
     background: #25ade3;
-    /*background: linear-gradient(135deg, #ff910e 0, #ffa841 100%);*/
 }
 
 .pos-r {

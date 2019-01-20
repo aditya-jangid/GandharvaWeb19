@@ -45,7 +45,7 @@
     </section>
 
     <section id="explore"
-             style="background:linear-gradient(45deg,rgba(0,0,0,0.1),rgba(0,0,0,0.2)),url('{% static "gandharva/img/nextEvent.JPG" %}');background-size: cover;">
+             style="background:linear-gradient(45deg,rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('{% static "gandharva/img/nextEvent.JPG" %}');background-size: cover;">
         <div class="container-fluid">
             <div class="row">
                 <div class=" col-md-4 watch">
@@ -89,10 +89,10 @@
             {% for event in events %}
                 {% if forloop.first %}
                     <div class="row">{% endif %}
-            <div class="col-sm-3 eventDiv hvr-bounce-to-top"
-                 style="background-image:url({% static event.img %}); background-repeat: no-repeat; background-size: cover; width: 300px;height: 300px"
+            <div class="col-sm-2 eventDiv hvr-bounce-to-top"
+                 style="background-image:url({% static event.img %}); background-repeat: no-repeat; background-size: cover; width: 480px;height: 260px"
                  data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="100" data-sal-duration="800">
-                <h2 class="eventTitle">{{ event.name }}</h2>
+                <h3 class="eventTitle">{{ event.name }}</h3>
                 <p class="eventDescription">
                     {{ event.description }}
                 </p>
@@ -104,7 +104,7 @@
                     </button>
                 </form>
             </div>
-            {% if forloop.counter|divisibleby:3 %}
+            {% if forloop.counter|divisibleby:5 %}
                 </div>
                 <div class="row">{% endif %}
             {% if forloop.last %}
