@@ -97,9 +97,6 @@
                  style="background-image:url({% static event.img %}); background-repeat: no-repeat; background-size: cover; width: 480px;height: 260px"
                  data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="100" data-sal-duration="800">
                 <h3 class="eventTitle">{{ event.name }}</h3>
-                <p class="eventDescription">
-                    {{ event.description }}
-                </p>
                 <form method="post" action={% url event.link_to %}>
                     {% csrf_token %}
                     <input type="hidden" name="dept" value={{ event.name }}>
