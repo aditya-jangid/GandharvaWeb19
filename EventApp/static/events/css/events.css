@@ -44,8 +44,8 @@ html, body {
     padding-top: 0.5vh;
     padding-bottom: 1vh;
     color: #fff;
-    font-weight: 300;
     opacity: 1;
+    font-weight: bold;
 }
 
 .eventButtons {
