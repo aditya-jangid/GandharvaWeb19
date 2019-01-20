@@ -46,9 +46,9 @@ class EventMaster(models.Model):
     num_of_winners = models.IntegerField()
     team_size = models.IntegerField()
     entry_fee = models.IntegerField()
-    objective = models.CharField(max_length=1000, blank=True)
-    rounds = models.CharField(max_length=10000, blank=True)
-    rules = models.CharField(max_length=100000, blank=True)
+    objective = models.TextField(max_length=1000, blank=True)
+    rounds = models.TextField(max_length=10000, blank=True)
+    rules = models.TextField(max_length=100000, blank=True)
 
     def __str__(self):
         return self.event_name
