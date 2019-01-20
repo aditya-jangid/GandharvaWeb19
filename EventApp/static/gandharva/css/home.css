@@ -17,16 +17,21 @@ html, body {
     z-index: 10;
 }
 
-#particle h1 {
+.mainTitle {
     position: absolute;
     top: 30vh;
-    left: 24vw;
+    text-align: center;
+}
+
+.mainTitle h1 {
     z-index: 500;
     color: #fff;
     word-wrap: break-word;
-    text-align: center;
-    font-size: 12vw;
+    font-size: 72px;
     font-family: 'Lobster', cursive;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 90px;
 }
 
 /*************************
@@ -294,7 +299,6 @@ img {
     left: 4vw;
     text-align: center;
     z-index: 300;
-    color: #fff;
     font-size: 10vw;
     color: #000;
 }
@@ -311,8 +315,8 @@ img {
     z-index: 10;
     background-color: #b380ff;
     margin-bottom: 6vh;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
     opacity: 0.84;
     height: 100px;
     border-radius: 25px;

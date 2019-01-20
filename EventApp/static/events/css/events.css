@@ -1,79 +1,51 @@
-html,body {
+html, body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
     font-family: 'Lato', sans-serif;
-    background-color: #f2f2f2;
-}
-/*
-.navbar {
-    background-color: #bfbfbf !important;
-    opacity: 0.86;
-
-}
-
-nav .navbar-nav li a {
-    color: #000000 !important;
-    opacity: 1;
-
-}
-
-.navbar-nav > li > .dropdown-menu {
-    opacity: 1;
-    background-color: #25ade3;
-
-}
-
-.navbar-nav > li > .dropdown-menu :hover {
     background-color: #fff;
 }
 
-.solid {
-    opacity: 1;
-
-}
-
-.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
-    color: #25ade3 !important;
-}
-*/
 .title {
     text-align: center;
     font-weight: bold;
-    margin-top: 50px;
+    padding-top: 140px;
     word-wrap: break-word;
+    color: #fff;
+    text-shadow: 2px 2px #000000;
 }
 
 .eventDiv {
     z-index: 10;
     background-color: #222222;
-    margin-bottom:4vh;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 0.84;
+    margin-bottom: 6vh;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    opacity: 0.6;
+    border-radius: 10px;
+    height: auto;
 }
 
 .eventTitle {
     z-index: 100;
-    padding-top: 4vh;
-    padding-bottom: 2vh;
-    padding-left: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 0.5vh;
     color: #fff;
     opacity: 1;
     font-weight: bold;
     word-wrap: break-word;
     hyphens: auto;
+    text-shadow: 2px 2px #000000;
 }
 
 .eventDescription {
     z-index: 100;
-    padding-top: 4vh;
-    padding-bottom: 2vh;
-    padding-left: 2vw;
+    padding-top: 0.5vh;
+    padding-bottom: 1vh;
     color: #fff;
+    font-weight: 300;
     opacity: 1;
-    font-weight: bold;
 }
 
 .eventButtons {
@@ -84,11 +56,10 @@ nav .navbar-nav li a {
     border: none;
     color: #FFFFFF;
     text-align: center;
-    padding: 1vw;
     transition: all 0.5s;
     cursor: pointer;
-    margin-bottom: 4vh;
-    margin-left: 2vw;
+    position: absolute;
+    bottom: 2vh;
     font-weight: bold;
 }
 
@@ -128,6 +99,7 @@ nav .navbar-nav li a {
     transition-duration: 0.5s;
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
+    border-radius: 10px;
 }
 
 .hvr-bounce-to-top:hover {
