@@ -18,7 +18,7 @@ def home(request):
         'events': Department.objects.all(),
         'sponsors': SponsorMaster.objects.all(),
         'carouselImage': Carousel.objects.all(),
-        'gandharvaDate': 'March 18, 2019'
+        'gandharvaDate': 'March 20, 2019'
     }
 
     return render(request, 'gandharva/index.html', args)
@@ -44,6 +44,7 @@ def details(request):
         'events_list': EventMaster.objects.all(),
         'pageTitle': EventMaster.objects.get(event_name__startswith=event_name).event_name,
         'event': EventMaster.objects.get(event_name__startswith=event_name),
+        'rules': EventMaster.objects.get(event_name__startswith=event_name).rules.split('. '),
     }
     return render(request, 'events/category1Event1.html', arg)
 

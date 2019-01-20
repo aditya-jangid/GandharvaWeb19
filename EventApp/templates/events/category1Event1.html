@@ -37,10 +37,12 @@
     </div>
     <br>
     <div class="container">
-        {% if event.rules %}
             <h1 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">Rules</h1>
-            <p data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">{{ event.rules }}</p>
-        {% endif %}
+        <ol>
+            {% for rule in rules %}
+                <li data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">{{ rule }}</li>
+            {% endfor %}
+        </ol>
     </div>
     <br>
     <div class="container">
