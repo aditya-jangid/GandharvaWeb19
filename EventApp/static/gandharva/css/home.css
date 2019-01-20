@@ -297,11 +297,11 @@ img {
     z-index: 10;
     background-color: #b380ff;
     margin-bottom: 6vh;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
     opacity: 0.84;
     height: 100px;
-    border-radius: 25px;
+    border-radius: 15px;
 }
 
 .eventTitle {
@@ -339,7 +339,7 @@ img {
     transition: all 0.5s;
     cursor: pointer;
     position: absolute;
-    bottom: 4vh;
+    bottom: 8vh;
     font-weight: bold;
 }
 
@@ -380,7 +380,7 @@ img {
     transition-duration: 0.5s;
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
-    border-radius: 25px;
+    border-radius: 15px;
 }
 
 .hvr-bounce-to-top:hover {
