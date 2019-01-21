@@ -94,8 +94,8 @@
                 {% if forloop.first %}
                     <div class="row">{% endif %}
             <div class="col-sm-2 eventDiv hvr-bounce-to-top"
-                 style="background-image:url({% static event.img %}); background-repeat: no-repeat; background-size: cover; width: 480px;height: 260px"
-                 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="100" data-sal-duration="800">
+                 style="background-image:url({% static event.img %}); background-repeat: no-repeat; background-size: cover; width: 480px;height: 240px"
+                 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="50" data-sal-duration="500">
                 <h3 class="eventTitle">{{ event.name }}</h3>
                 <form method="post" action={% url event.link_to %}>
                     {% csrf_token %}
