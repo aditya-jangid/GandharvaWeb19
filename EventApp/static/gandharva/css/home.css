@@ -17,16 +17,20 @@ html, body {
     z-index: 10;
 }
 
-#particle h1 {
+.mainTitle {
     position: absolute;
-    top: 30vh;
-    left: 24vw;
+    top: 34vh;
+    left:36vw;
+    text-align: center;
+}
+
+.mainTitle h1 {
     z-index: 500;
     color: #fff;
     word-wrap: break-word;
-    text-align: center;
-    font-size: 12vw;
+    font-size: 80px;
     font-family: 'Lobster', cursive;
+    text-align: center;
 }
 
 /*************************
@@ -35,11 +39,6 @@ html, body {
 
 #explore {
     background-color: #6fa4c3;
-    /*background-image: url("../images/event-bg.jpg");*/
-    /*background-position: center bottom;*/
-    /*background-size: contain;*/
-    /*background-repeat: no-repeat;*/
-
     position: relative;
     overflow: hidden;
     padding-top: 4vh;
@@ -193,30 +192,6 @@ html, body {
     background-color: #126d55
 }
 
-/*
-.clock {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    z-index: 100;
-    font-size: 4.6vw;
-    text-align: center;
-    color: #fff;
-}
-
-.clock h1 {
-    padding-top: 16vh;
-    z-index: 300;
-    color: #fff;
-    font-weight: bold;
-    word-wrap: break-word;
-    text-align: center;
-    margin: 4vw;
-}
-*/
-
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .clock h1 {
@@ -234,6 +209,16 @@ html, body {
     .brand img {
         width: 100%;
         height: 120px;
+    }
+
+    .mainTitle h1{
+        font-size: 60px;
+    }
+    .mainTitle{
+       left: 14vw;
+    }
+    .mainTitle h3{
+        font-size: 20px;
     }
 
 }
@@ -257,6 +242,8 @@ html, body {
         width: 100%;
         height: auto;
     }
+
+
 
 }
 
@@ -294,7 +281,6 @@ img {
     left: 4vw;
     text-align: center;
     z-index: 300;
-    color: #fff;
     font-size: 10vw;
     color: #000;
 }
@@ -311,11 +297,11 @@ img {
     z-index: 10;
     background-color: #b380ff;
     margin-bottom: 6vh;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
     opacity: 0.84;
     height: 100px;
-    border-radius: 25px;
+    border-radius: 15px;
 }
 
 .eventTitle {
@@ -353,7 +339,7 @@ img {
     transition: all 0.5s;
     cursor: pointer;
     position: absolute;
-    bottom: 4vh;
+    bottom: 8vh;
     font-weight: bold;
 }
 
@@ -394,7 +380,7 @@ img {
     transition-duration: 0.5s;
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
-    border-radius: 25px;
+    border-radius: 15px;
 }
 
 .hvr-bounce-to-top:hover {
@@ -523,112 +509,3 @@ img {
     width: 100%;
     position: absolute;
 }
-
-/*************************
-******Contact CSS****
-**************************/
-/*
-.contact-section {
-    background-color: #f7ab24;
-    background-image: url("../images/contact-bg.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-}*/
-
-/*.ear-piece {*/
-/*position: absolute;*/
-/*left: 0;*/
-/*top: 0;*/
-/*}*/
-/*
-#contact .container {
-    padding-top: 47px;
-}
-
-#contact h3 {
-    text-transform: inherit;
-    color: #373737;
-}
-
-#contact-section h3 {
-    margin-bottom: 25px
-}
-
-#contact address {
-    font-size: 18px;
-    color: #373737;
-    word-wrap: break-word;
-}
-
-.contact-text {
-    margin-bottom: 35px;
-    display: block;
-}
-
-#contact-section .form-control {
-    border-color: #ae750d;
-    box-shadow: none;
-    outline: 0 none;
-    border-radius: 0;
-    color: #797979;
-    font-size: 18px;
-}
-
-#contact-section .form-control:focus {
-    border-color: #ae750d;
-}
-
-#contact-section input {
-    height: 44px;
-}
-
-#contact-section textarea {
-    height: 90px;
-    resize: none;
-}
-
-#contact-section .btn-primary {
-    background-color: #373737;
-    color: #f7ab24;
-    border: none;
-    font-size: 24px;
-    padding: 6px 42px;
-    margin-bottom: 20px;
-    margin-top: 10px
-}
-
-#contact-section .btn-primary:hover {
-    background-color: #212020;
-    color: #fff
-}
-*/
-/*************************
-******Footer CSS****
-**************************/
-/*
-#footer {
-    background-color: #212121;
-    background-image: url("../images/footer-bg.jpg");
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #FFFFFF;
-    font-size: 20px;
-    padding-top: 20px;
-    padding-bottom: 10px;
-}
-
-a {
-    -webkit-transition: 300ms;
-    -moz-transition: 300ms;
-    -o-transition: 300ms;
-    transition: 300ms;
-}
-
-a:focus,
-a:hover {
-    text-decoration: none;
-    outline: none
-}
-*/

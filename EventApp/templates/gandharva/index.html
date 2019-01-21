@@ -39,7 +39,10 @@
                 </div>
                 <div id="particle">
                     <div id="particles-js"></div>
-                    {#                    <h1>Gandharva</h1>#}
+                    <div class="mainTitle">
+                        <h1>Gandharva</h1>
+                        <h3 style="color: #fff;text-align: center;">A Techno-Cultural Fest</h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -94,9 +97,6 @@
                  style="background-image:url({% static event.img %}); background-repeat: no-repeat; background-size: cover; width: 480px;height: 260px"
                  data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="100" data-sal-duration="800">
                 <h3 class="eventTitle">{{ event.name }}</h3>
-                <p class="eventDescription">
-                    {{ event.description }}
-                </p>
                 <form method="post" action={% url event.link_to %}>
                     {% csrf_token %}
                     <input type="hidden" name="dept" value={{ event.name }}>
@@ -201,11 +201,10 @@
                     frameborder="0" style="border:0;width:100%;height:100%" allowfullscreen></iframe>
         </div>
     </section>
-    {% block scripts %}
-        <script type="text/javascript" src="{% static 'gandharva/js/coundown-timer.js' %}"></script>
-        <script type="text/javascript" src="{% static 'gandharva/js/main.js' %}"></script>
-        <script type="text/javascript" src="{% static 'gandharva/js/slick.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'gandharva/js/particles.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'gandharva/js/home.js' %}"></script>
-    {% endblock %}
+{% endblock %}
+{% block scripts %}
+    <script type="text/javascript" src="{% static 'gandharva/js/coundown-timer.js' %}"></script>
+    <script type="text/javascript" src="{% static 'gandharva/js/slick.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'gandharva/js/particles.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'gandharva/js/home.js' %}"></script>
 {% endblock %}

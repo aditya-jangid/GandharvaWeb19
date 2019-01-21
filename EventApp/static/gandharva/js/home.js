@@ -2,24 +2,15 @@ console.log('Hello');
 
 sal();
 
-function SweetAlertSuccess() {
-    swal({
-        title: "Success!",
-        text: "Message sent successfully",
-        icon: "success",
-        button: "Ok",
-    });
-}
+//Countdown js
+$("#countdown").countdown({
+        date: "10 july 2014 12:00:00",
+        format: "on"
+    },
 
-function SweetAlertFailure() {
-    swal({
-        title: "Failure",
-        text: "Message sent successfully",
-        icon: "error",
-        button: "Ok",
+    function () {
+        // callback function
     });
-}
-
 
 $(document).ready(function () {
     $(".testimonial-carousel").slick({
@@ -46,19 +37,6 @@ $(document).ready(function () {
                 slidesToShow: 1
             }
         }]
-    });
-});
-
-
-$(document).ready(function () {
-    // Transition effect for navbar
-    $(window).scroll(function () {
-        // checks if window is scrolled more than 500px, adds/removes solid class
-        if ($(this).scrollTop() > 500) {
-            $('.navbar').addClass('solid');
-        } else {
-            $('.navbar').removeClass('solid');
-        }
     });
 });
 
