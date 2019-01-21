@@ -29,7 +29,7 @@ html, body {
 
 .eventTitle {
     z-index: 100;
-    padding-top: 1vh;
+    padding-top:1vh;
     padding-bottom: 0.5vh;
     color: #fff;
     opacity: 1;
@@ -42,7 +42,7 @@ html, body {
 .eventDescription {
     z-index: 100;
     padding-top: 0.5vh;
-    padding-bottom: 1vh;
+    padding-bottom: 0.5vh;
     color: #fff;
     opacity: 1;
     font-weight: bold;
@@ -58,9 +58,7 @@ html, body {
     text-align: center;
     transition: all 0.5s;
     cursor: pointer;
-    /*position: absolute;*/
-    /*bottom: 2vh;*/
-    margin-top: 1vh;
+    margin-top: 0.5vh;
     margin-bottom: 2vh;
     font-weight: bold;
 }
