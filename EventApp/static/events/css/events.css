@@ -58,8 +58,10 @@ html, body {
     text-align: center;
     transition: all 0.5s;
     cursor: pointer;
-    position: absolute;
-    bottom: 2vh;
+    /*position: absolute;*/
+    /*bottom: 2vh;*/
+    margin-top: 1vh;
+    margin-bottom: 2vh;
     font-weight: bold;
 }
 
