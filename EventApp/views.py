@@ -2,7 +2,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login , logout
 from django.urls import reverse
-from EventApp.models import Department, EventMaster, Carousel, SponsorMaster, RoleAssignment, RoleMaster, MyUser, EventDepartment
+from EventApp.models import Department, EventMaster, Carousel, SponsorMaster, RoleAssignment, RoleMaster, MyUser, EventDepartment,GandharvaHome
 from .forms import UserRegistration , ContactUsForm, RoleMasterForm
 from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
@@ -18,7 +18,8 @@ def home(request):
         'events': Department.objects.all(),
         'sponsors': SponsorMaster.objects.all(),
         'carouselImage': Carousel.objects.all(),
-        'gandharvaDate': 'March 20, 2019'
+        'gandharvaDate': GandharvaHome.objects.get(title__startswith= "Date").data,
+        'About' : GandharvaHome.objects.get(title__startswith= "About").data,
     }
 
     return render(request, 'gandharva/index.html', args)

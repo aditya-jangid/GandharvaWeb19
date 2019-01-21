@@ -56,7 +56,7 @@ class EventMaster(models.Model):
         return self.event_name
 
 
-
+#links the events with the departments
 class EventDepartment(models.Model):
     event = models.ForeignKey(EventMaster, on_delete=models.CASCADE)
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
@@ -90,3 +90,12 @@ class ContactUs(models.Model):
 
     def __str__(self):
         return self.user_name
+
+#used for all data on home page
+class GandharvaHome(models.Model):
+
+    title = models.CharField(max_length=100)
+    data = models.TextField(max_length=1000,blank=True)
+
+    def __str__(self):
+        return self.title
