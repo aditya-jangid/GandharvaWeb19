@@ -23,7 +23,7 @@ html, body {
     margin-left: 1.5vw;
     margin-right: 1.5vw;
     opacity: 0.6;
-    border-radius: 10px;
+    border-radius: 8px;
     height: auto;
 }
 
@@ -78,6 +78,7 @@ html, body {
     transition-property: color;
     -webkit-transition-duration: 0.5s;
     transition-duration: 0.5s;
+    border-radius: 8px;
 }
 
 .hvr-bounce-to-top:before {
@@ -99,7 +100,7 @@ html, body {
     transition-duration: 0.5s;
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .hvr-bounce-to-top:hover {

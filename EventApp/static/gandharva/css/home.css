@@ -20,7 +20,7 @@ html, body {
 .mainTitle {
     position: absolute;
     top: 34vh;
-    left:36vw;
+    left: 36vw;
     text-align: center;
 }
 
@@ -211,13 +211,15 @@ html, body {
         height: 120px;
     }
 
-    .mainTitle h1{
+    .mainTitle h1 {
         font-size: 60px;
     }
-    .mainTitle{
-       left: 14vw;
+
+    .mainTitle {
+        left: 14vw;
     }
-    .mainTitle h3{
+
+    .mainTitle h3 {
         font-size: 20px;
     }
 
@@ -242,8 +244,6 @@ html, body {
         width: 100%;
         height: auto;
     }
-
-
 
 }
 
@@ -300,15 +300,14 @@ img {
     margin-left: 1.5vw;
     margin-right: 1.5vw;
     opacity: 0.84;
-    height: 100px;
-    border-radius: 15px;
+    border-radius: 8px;
 }
 
 .eventTitle {
     z-index: 100;
     padding-top: 4vh;
     padding-bottom: 1vh;
-    padding-left: 2vw;
+    padding-left: 1vw;
     color: #fff;
     font-weight: bold;
     opacity: 1;
@@ -349,7 +348,7 @@ img {
 
 .hvr-bounce-to-top {
     display: inline-block;
-    border-radius: 25px;
+    border-radius: 8px;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
@@ -380,7 +379,7 @@ img {
     transition-duration: 0.5s;
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
-    border-radius: 15px;
+    border-radius: 8px;
 }
 
 .hvr-bounce-to-top:hover {
