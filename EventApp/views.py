@@ -7,7 +7,6 @@ from .forms import UserRegistration , ContactUsForm, RoleMasterForm
 from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
 from EventApp.decorators import user_Role_head
-import sweetify
 
 # Create your views here.
 
@@ -34,6 +33,7 @@ def event(request):
     args1 = {
         'pageTitle': dept,
         'events': EventDepartment.objects.filter(department = dept_choose),
+        'dept_choosen': dept_choose
     }
     return render(request, 'events/event1.html', args1)
 
@@ -45,6 +45,7 @@ def details(request):
         'events_list': EventMaster.objects.all(),
         'pageTitle': EventMaster.objects.get(event_name__startswith=event_name).event_name,
         'event': EventMaster.objects.get(event_name__startswith=event_name),
+        'dept': EventDepartment.objects.get(event = EventMaster.objects.get(event_name__startswith=event_name)),
     }
     return render(request, 'events/category1Event1.html', arg)
 

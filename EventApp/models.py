@@ -34,6 +34,7 @@ class Department(models.Model):
     description = models.TextField()
     img = models.CharField(max_length=200)
     link_to = models.CharField(max_length=200)
+    banner_src = models.CharField(max_length=500,blank = True)
 
     def __str__(self):
         return self.name
@@ -49,6 +50,7 @@ class EventMaster(models.Model):
     objective = models.TextField(max_length=1000, blank=True)
     rounds = models.TextField(max_length=10000, blank=True)
     rules = models.TextField(max_length=100000, blank=True)
+    container_src = models.CharField(max_length=500, blank=True)
 
     def __str__(self):
         return self.event_name
