@@ -113,6 +113,9 @@
     .twit {
         left: -5%;
     }
+    .mainTitle h2{
+        font-size: 40px;
+    }
 
 }
 
@@ -272,6 +275,10 @@
     .about-content {
         width: 100%;
         padding: 70px 25px 110px;
+    }
+
+    .mainTitle h2{
+        font-size: 40px;
     }
 
 }
@@ -447,6 +454,10 @@
     .contact-section {
         background-position: left 0 bottom 0;
         background-size: cover;
+    }
+
+    .mainTitle h2{
+        font-size: 40px;
     }
 
 }

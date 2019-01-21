@@ -4,12 +4,11 @@
 {% block css %}
     <link href="{% static 'gandharva/css/responsive.css' %}" rel="stylesheet">
     <link href="{% static 'gandharva/css/contactUs.css' %}" rel="stylesheet">
-    <link href="{% static 'gandharva/css/sal.css' %}" rel="stylesheet">
 {% endblock %}
 {% block body %}
     <br><br>
-    <section id="contact">
-        <div class="contact-section" style="background-image:url('{% static 'gandharva/img/contact-bg.jpg' %}')">
+{#    <section id="contact">#}
+        <div class="contact-section" style="background:linear-gradient(45deg,rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('{% static 'gandharva/img/p.jpg' %}');">
             <div class="container-fluid">
                 <div class="row">
                     <div class=" col-md-3 ear-piece">
@@ -21,8 +20,7 @@
                         <div class="contact-text">
                             <h3 style="margin-top:4vh">Contact</h3>
                             <address>
-                                E-mail: viitgandharva2000@gmail.com<br>
-                                Phone: +1 (123) 456 7890
+                                Email : gandharva@viit.ac.in
                             </address>
                         </div>
                         <div class="contact-address">
@@ -37,7 +35,7 @@
                     <div class="col-sm-1"></div>
                     <div class="col-sm-5 col-md-4" data-sal="slide-right" data-sal-easing="ease-out-bounce"
                          data-sal-delay="100"
-                         data-sal-duration="800">
+                         data-sal-duration="800" style="padding-bottom:10vh">
                         <div id="contact-section">
                             <h3 style="margin-top:4vh">Send a message</h3>
                             <div class="status alert alert-success" style="display: none"></div>
@@ -94,9 +92,15 @@
                 </div>
             </div>
         </div>
-        <br><br>
-    </section>
-    {% block scripts %}
-        <script type="text/javascript" src="{% static 'gandharva/js/home.js' %}"></script>
-    {% endblock %}
+{#    </section>#}
+{% endblock %}
+{% block scripts %}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="{% static 'gandharva/js/contactUs.js' %}"></script>
+    <script>
+        //Write your logic here...
+        //You can call functions directly as below:
+        // SweetAlertSuccess();
+        // SweetAlertFailure();
+    </script>
 {% endblock %}

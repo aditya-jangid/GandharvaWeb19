@@ -22,7 +22,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <a class="navbar-brand" href="{% url 'home' %}" style="font-family: 'Lobster', cursive;font-size: 30px;color: #fff">
-        Gandharva</a>
+        <img src="{% static 'base/img/250px.png' %}" height='32' width='160' alt="Gandharva'19"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span><i class="fas fa-bars" style="color:#fff;font-size: 28px"></i></span>
@@ -38,14 +38,31 @@
                     Events
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    {% for event in events %}
                         <form method="post" action="{% url 'events' %}">
                             {% csrf_token %}
-                            <input type="hidden" name="dept" value={{ event.name }}>
-                            <button type="submit" class="dropdown-item dropdownStyle">{{ event.name }}</button>
+                            <input type="hidden" name="dept" value="Computer">
+                            <button type="submit" class="dropdown-item dropdownStyle">Computer</button>
                         </form>
-
-                    {% endfor %}
+                        <form method="post" action="{% url 'events' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="dept" value="IT">
+                            <button type="submit" class="dropdown-item dropdownStyle">IT</button>
+                        </form>
+                         <form method="post" action="{% url 'events' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="dept" value="ENTC">
+                            <button type="submit" class="dropdown-item dropdownStyle">ENTC</button>
+                        </form>
+                        <form method="post" action="{% url 'events' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="dept" value=Mechanical>
+                            <button type="submit" class="dropdown-item dropdownStyle">Mechanical</button>
+                        </form>
+                        <form method="post" action="{% url 'events' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="dept" value=Civil>
+                            <button type="submit" class="dropdown-item dropdownStyle">Civil</button>
+                        </form>
                 </div>
             </li>
             <li class="nav-item">
@@ -55,50 +72,52 @@
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'contactus' %}">Contact Us</a>
             </li>
-            {% if user.is_authenticated %}
-             <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">
-                            {{ user.username }}
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  {% if user.is_superuser %}
-                            <form method="get" action="{% url 'RegisterHead' %}">
-                                {% csrf_token %}
-                                <input type="hidden" name="HeadRegister" value=>
-                                <button type="submit" class="dropdown-item">Register Heads</button>
-                            </form>
-                 {% endif %}
-                            <form method="get" action="">
-                                {% csrf_token %}
-                                <input type="hidden" name="profile" value=>
-                                <button type="submit" class="dropdown-item">My Profile</button>
-                            </form>
-                            <form method="get" action="">
-                                {% csrf_token %}
-                                <input type="hidden" name="EventRegister" value=>
-                                <button type="submit" class="dropdown-item">Register Events</button>
-                            </form>
-                             <form method="get" action="">
-                                {% csrf_token %}
-                                <input type="hidden" name="payment" value=>
-                                <button type="submit" class="dropdown-item">Payments</button>
-                            </form>
-                            <form method="get" action="{% url 'user_logout' %}">
-                                {% csrf_token %}
-                                <input type="hidden" name="dept" value=>
-                                <button type="submit" class="dropdown-item">Log Out</button>
-                            </form>
-                        </div>
-            {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'user_login' %}">Login</a>
-                </li>
-            {% endif %}
+
+            {#        Login Button#}
+
+            {#            {% if user.is_authenticated %}#}
+            {#             <li class="nav-item dropdown">#}
+            {#                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"#}
+            {#                           aria-haspopup="true" aria-expanded="false">#}
+            {#                            {{ user.username }}#}
+            {#                        </a>#}
+            {#                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">#}
+            {#                  {% if user.is_superuser %}#}
+            {#                            <form method="get" action="{% url 'RegisterHead' %}">#}
+            {#                                {% csrf_token %}#}
+            {#                                <input type="hidden" name="HeadRegister" value=>#}
+            {#                                <button type="submit" class="dropdown-item">Register Heads</button>#}
+            {#                            </form>#}
+            {#                 {% endif %}#}
+            {#                            <form method="get" action="">#}
+            {#                                {% csrf_token %}#}
+            {#                                <input type="hidden" name="profile" value=>#}
+            {#                                <button type="submit" class="dropdown-item">My Profile</button>#}
+            {#                            </form>#}
+            {#                            <form method="get" action="">#}
+            {#                                {% csrf_token %}#}
+            {#                                <input type="hidden" name="EventRegister" value=>#}
+            {#                                <button type="submit" class="dropdown-item">Register Events</button>#}
+            {#                            </form>#}
+            {#                             <form method="get" action="">#}
+            {#                                {% csrf_token %}#}
+            {#                                <input type="hidden" name="payment" value=>#}
+            {#                                <button type="submit" class="dropdown-item">Payments</button>#}
+            {#                            </form>#}
+            {#                            <form method="get" action="{% url 'user_logout' %}">#}
+            {#                                {% csrf_token %}#}
+            {#                                <input type="hidden" name="dept" value=>#}
+            {#                                <button type="submit" class="dropdown-item">Log Out</button>#}
+            {#                            </form>#}
+            {#                        </div>#}
+            {#            {% else %}#}
+            {#                <li class="nav-item">#}
+            {#                    <a class="nav-link" href="{% url 'user_login' %}">Login</a>#}
+            {#                </li>#}
+            {#            {% endif %}#}
         </ul>
     </div>
 </nav>
-<br>
 {% block body %}
 {% endblock %}
 <footer id="footer">

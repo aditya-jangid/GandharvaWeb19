@@ -8,23 +8,26 @@ html, body {
     padding: 0px;
     scroll-behavior: smooth;
     font-family: 'Lato', sans-serif;
-    background-color: #f9ab00;
+    background-color: #fff;
+    color: #fff;
 }
 
 .contact-section {
-    background-color: #f9ab00;
+    background-color: #135f89;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+    padding-top: 6vh;
 }
 
 #contact .container {
-    padding-top: 47px;
+    padding-top:60px;
 }
 
 #contact h3 {
     text-transform: inherit;
-    color: #373737;
+    color: #fff;
+    font-weight: bold;
 }
 
 #contact-section h3 {
@@ -33,7 +36,7 @@ html, body {
 
 #contact address {
     font-size: 18px;
-    color: #373737;
+    color: #fff;
     word-wrap: break-word;
 }
 
@@ -43,11 +46,10 @@ html, body {
 }
 
 #contact-section .form-control {
-    border-color: #ae750d;
+    border-color: #135f89;
     box-shadow: none;
     outline: 0 none;
     border-radius: 0;
-    color: #797979;
     font-size: 18px;
 }
 
@@ -66,7 +68,7 @@ html, body {
 
 #contact-section .btn-primary {
     background-color: #373737;
-    color: #f7ab24;
+    color:#fff;
     border: none;
     font-size: 24px;
     padding: 6px 42px;

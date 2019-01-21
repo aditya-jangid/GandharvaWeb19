@@ -6,16 +6,6 @@ from django.contrib.auth.models import AbstractUser, PermissionsMixin
 
 #Abstract User , it is the extension of the base User model which can be customized
 class MyUser(AbstractUser):
-  USER_TYPE_CHOICES = (
-      (1, 'Participant'),
-      (2, 'Event Head'),
-      (3, 'Department Head'),
-      (4, 'Joint Head'),
-      (5, 'Gandharva Incharge'),
-      (6, 'admin')
-  )
-
-  user_type = models.PositiveSmallIntegerField(choices=USER_TYPE_CHOICES, default = 1)
 
   def __str__(self):
      return self.username
@@ -30,26 +20,12 @@ class RoleMaster (models.Model):
 
 #RoleAssignment assigns the roles to the user
 class RoleAssignment (models.Model):
-    user = models.ForeignKey(MyUser, unique =True, on_delete=models.CASCADE)
+    user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
     role = models.ForeignKey(RoleMaster, on_delete=models.PROTECT)
 
     def __int__(self):
-        return self.name
+        return self.role.name
 
-#EventMaster to handle the events section
-class EventMaster(models.Model):
-    event_id = models.IntegerField(primary_key=True)
-    event_name = models.CharField(max_length=100)
-    num_of_winners = models.IntegerField()
-    team_size = models.IntegerField()
-    entry_fee = models.IntegerField()
-    objective = models.CharField(max_length=1000)
-    round1 = models.CharField(max_length=1000)
-    round2 = models.CharField(max_length=1000)
-    rules = models.CharField(max_length=1000)
-
-    def __str__(self):
-        return self.event_name
 
 # model for Department
 class Department(models.Model):
@@ -58,14 +34,35 @@ class Department(models.Model):
     description = models.TextField()
     img = models.CharField(max_length=200)
     link_to = models.CharField(max_length=200)
+    banner_src = models.CharField(max_length=500,blank = True)
 
     def __str__(self):
         return self.name
 
 
+# EventMaster to handle the events section
+class EventMaster(models.Model):
+    event_id = models.IntegerField(primary_key=True)
+    event_name = models.CharField(max_length=100)
+    num_of_winners = models.IntegerField()
+    team_size = models.IntegerField()
+    entry_fee = models.IntegerField()
+    objective = models.TextField(max_length=1000, blank=True)
+    rounds = models.TextField(max_length=10000, blank=True)
+    rules = models.TextField(max_length=100000, blank=True)
+    container_src = models.CharField(max_length=500, blank=True)
+
+    def __str__(self):
+        return self.event_name
+
+
+
 class EventDepartment(models.Model):
     event = models.ForeignKey(EventMaster, on_delete=models.CASCADE)
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.event.event_name
 
 #sponsors model
 class SponsorMaster(models.Model):
