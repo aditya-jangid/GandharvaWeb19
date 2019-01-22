@@ -23,8 +23,9 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <a class="navbar-brand" href="{% url 'home' %}" style="font-family: 'Lobster', cursive;font-size: 30px;color: #fff">Gandharva 19
-        </a>
+    <a class="navbar-brand" href="{% url 'home' %}" style="font-family: 'Lobster', cursive;font-size: 30px;color: #fff">Gandharva
+        19
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span><i class="fas fa-bars" style="color:#fff;font-size: 28px"></i></span>
@@ -40,31 +41,31 @@
                     Events
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <form method="get" action="{% url 'events' %}">
-                            {% csrf_token %}
-                            <input type="hidden" name="dept" value="Computer">
-                            <button type="submit" class="dropdown-item dropdownStyle">Computer</button>
-                        </form>
-                        <form method="get" action="{% url 'events' %}">
-                            {% csrf_token %}
-                            <input type="hidden" name="dept" value="IT">
-                            <button type="submit" class="dropdown-item dropdownStyle">IT</button>
-                        </form>
-                         <form method="get" action="{% url 'events' %}">
-                            {% csrf_token %}
-                            <input type="hidden" name="dept" value="ENTC">
-                            <button type="submit" class="dropdown-item dropdownStyle">ENTC</button>
-                        </form>
-                        <form method="get" action="{% url 'events' %}">
-                            {% csrf_token %}
-                            <input type="hidden" name="dept" value=Mechanical>
-                            <button type="submit" class="dropdown-item dropdownStyle">Mechanical</button>
-                        </form>
-                        <form method="get" action="{% url 'events' %}">
-                            {% csrf_token %}
-                            <input type="hidden" name="dept" value=Civil>
-                            <button type="submit" class="dropdown-item dropdownStyle">Civil</button>
-                        </form>
+                    <form method="get" action="{% url 'events' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="dept" value="Computer">
+                        <button type="submit" class="dropdown-item dropdownStyle">Computer</button>
+                    </form>
+                    <form method="get" action="{% url 'events' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="dept" value="IT">
+                        <button type="submit" class="dropdown-item dropdownStyle">IT</button>
+                    </form>
+                    <form method="get" action="{% url 'events' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="dept" value="ENTC">
+                        <button type="submit" class="dropdown-item dropdownStyle">ENTC</button>
+                    </form>
+                    <form method="get" action="{% url 'events' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="dept" value=Mechanical>
+                        <button type="submit" class="dropdown-item dropdownStyle">Mechanical</button>
+                    </form>
+                    <form method="get" action="{% url 'events' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="dept" value=Civil>
+                        <button type="submit" class="dropdown-item dropdownStyle">Civil</button>
+                    </form>
                 </div>
             </li>
             <li class="nav-item">
@@ -148,13 +149,13 @@
 </footer>
 
 <script>
-    if('serviceWorker' in navigator) {
+    if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('service-worker.js', {
-      scope: './'
-      }).then(function(reg) {
-      console.log('Service worker has been registered for scope:'+ reg.scope);
-      });
-      }
+            scope: './'
+        }).then(function (reg) {
+            console.log('Service worker has been registered for scope:' + reg.scope);
+        });
+    }
 </script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -166,6 +167,8 @@
         integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
         crossorigin="anonymous"></script>
 <script type="text/javascript" src="{% static 'gandharva/js/sal.js' %}"></script>
+<script type="text/javascript" src="{% static 'base/js/base.js' %}"></script>
+
 
 {% block scripts %}
 {% endblock %}

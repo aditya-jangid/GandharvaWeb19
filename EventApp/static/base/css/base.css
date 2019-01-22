@@ -15,7 +15,7 @@ html, body {
 **************************/
 .navbar {
     background-color: #004E8A !important;
-    opacity: 1;
+    opacity: 0.8;
 }
 
 nav .navbar-nav li a {
