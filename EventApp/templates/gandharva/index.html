@@ -60,25 +60,24 @@
                 <div class="col-sm-12 col-md-6">
                     <h2 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="100"
                         data-sal-duration="800">Gandharva'19 in</h2>
-                    <ul id="countdown" data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="100"
-                        data-sal-duration="800">
-                        <li>
-                            <span class="days time-font">00</span>
-                            <p style="text-align: center" class="">Days</p>
-                        </li>
-                        <li>
-                            <span class="hours time-font">00</span>
-                            <p class="" style="text-align: center">Hours </p>
-                        </li>
-                        <li>
-                            <span class="minutes time-font">00</span>
-                            <p class="" style="text-align: center">Minutes</p>
-                        </li>
-                        <li>
-                            <span class="seconds time-font">00</span>
-                            <p class="" style="text-align: center">Seconds</p>
-                        </li>
-                    </ul>
+                    <div id="countdown" style="display: flex;flex-direction: row;justify-content:space-between">
+                        <div class="col text-center">
+                            <h1 style="color:#fff;font-size: 6vw;font-weight: 300" class="days">00</h1>
+                            <p style="color: #fff">Days</p>
+                        </div>
+                        <div class="col text-center">
+                            <h1 style="color:#fff;font-size: 6vw;font-weight: 300" class="hours">00</h1>
+                            <p style="color: #fff">Hours</p>
+                        </div>
+                        <div class="col text-center">
+                            <h1 style="color:#fff;font-size: 6vw;font-weight: 300" class="minutes">00</h1>
+                            <p style="color: #fff">Minutes</p>
+                        </div>
+                        <div class="col text-center">
+                            <h1 style="color:#fff;font-size: 6vw;font-weight: 300" class="seconds">00</h1>
+                            <p style="color: #fff">Seconds</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -195,7 +194,7 @@
                             <div class="control prev"><i class="fa fa-chevron-left text-white">&nbsp;</i></div>
                             <div class="control next"><i class="fa fa-chevron-right text-white">&nbsp;</i></div>
                         </div>
-                        <div class="owl-carousel owl-centered">
+                        <div class="owl-carousel" style="margin-right: auto;margin-left: auto">
                             {% for sponsor in sponsors %}
                                 <div class="one-slide white">
                                     <div class="testimonial w-100 h-100 p-3 text-center">
