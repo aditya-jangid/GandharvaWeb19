@@ -26,7 +26,6 @@ nav .navbar-nav li a {
 .dropdownStyle {
     color: white !important;
     font-weight: bold;
-    text-transform: uppercase;
     margin: 4px;
 }
 
@@ -57,7 +56,7 @@ nav li .active a {
 .nav.navbar-nav li a {
     color: white !important;
     font-weight: bold;
-    text-transform: uppercase;
+    font-size: 18px;
     margin: 4px;
 }
 
