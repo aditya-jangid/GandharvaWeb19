@@ -71,8 +71,8 @@ nav li .active a {
     background-repeat: no-repeat;
     background-size: cover;
     color: #FFFFFF;
-    padding-top: 20px;
-    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 8px;
 }
 
 a {
