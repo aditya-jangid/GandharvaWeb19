@@ -1,34 +1,36 @@
 {% extends 'base/base.html' %}
 {% load static %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Gandharva-Home{% endblock %}
 {% block css %}
     <link href="{% static 'gandharva/css/slick.min.css' %}" rel="stylesheet">
     <link href="{% static 'gandharva/css/responsive.css' %}" rel="stylesheet">
     <link href="{% static 'gandharva/css/home.css' %}" rel="stylesheet">
+
     <script>
         var GandharvaDate = "{{gandharvaDate}}";
     </script>
 {% endblock %}
 
 {% block body %}
-    <section>
-        <div class="container-fluid" style="background-color: rgba(0,0,0,0.8); padding:0;height: auto;width: 100%">
+    <section style="height:100vh">
+        <div class="container-fluid"
+             style="background-color: rgba(0,0,0,0.8); padding:0;height:100%;width: 100%;margin-top:8vh">
             <div class="row">
                 <div class="col-12">
-
                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel"
-                         data-interval="3000" style="width: 100%;">
-                        <div class="carousel-inner">
+                         data-interval="3000" style="width: 100%; height: 100vh;object-fit: cover;">
+                        <div class="carousel-inner" style="height: 100%;">
                             {% for carouselImg in carouselImage %}
                                 {% if forloop.first %}
-                                    <div class="carousel-item active">
+                                    <div class="carousel-item active" style="object-fit: cover">
                                         <img class="d-block w-100 img-fluid" src="{% static carouselImg.src %}"
-                                             alt="carouselImages">
+                                             alt="carouselImages" style="height: 100vh;object-fit: cover">
                                     </div>
                                 {% else %}
-                                    <div class="carousel-item">
-                                        <img class="d-block w-100 img-fluid" src="{% static carouselImg.src %}"
+                                    <div class="carousel-item" style="object-fit: cover">
+                                        <img class="d-block w-100 img-fluid" style="height: 100vh;object-fit: cover"
+                                             src="{% static carouselImg.src %}"
                                              alt="carouselImages">
                                     </div>
                                 {% endif %}
@@ -38,63 +40,64 @@
                 </div>
                 <div id="particle">
                     <div id="particles-js"></div>
-                    <h1>Gandharva</h1>
+                    <div class="mainTitle">
+                        <h1>Gandharva</h1>
+                        <h3 style="color: #fff;text-align: center;">A Techno-Cultural Fest</h3>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="explore">
+    <section id="explore"
+             style="background:linear-gradient(45deg,rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('{% static "gandharva/img/nextEvent.JPG" %}');background-size: cover;">
         <div class="container-fluid">
             <div class="row">
                 <div class=" col-md-4 watch">
                     <img class="img-fluid" src="{% static 'gandharva/images/watch.png' %}" alt="">
                 </div>
                 <div class="col-sm-12 col-md-6">
-                    <h1 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="100"
-                        data-sal-duration="800">Our next event in</h1>
+                    <h2 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="100"
+                        data-sal-duration="800">Gandharva'19 in</h2>
                     <ul id="countdown" data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="100"
                         data-sal-duration="800">
                         <li>
                             <span class="days time-font">00</span>
-                            <p>Days </p>
+                            <p style="text-align: center" class="">Days</p>
                         </li>
                         <li>
                             <span class="hours time-font">00</span>
-                            <p class="">Hours </p>
+                            <p class="" style="text-align: center">Hours </p>
                         </li>
                         <li>
                             <span class="minutes time-font">00</span>
-                            <p class="">Minutes</p>
+                            <p class="" style="text-align: center">Minutes</p>
                         </li>
                         <li>
                             <span class="seconds time-font">00</span>
-                            <p class="">Seconds</p>
+                            <p class="" style="text-align: center">Seconds</p>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-    <div class="col-sm-12" style="height:50px; background-color:#33888f"></div>
+    <div class="col-sm-12" style="height:10px; background-color:#33888f"></div>
     <section id="eventSection">
         <img class="img-fluid" src="{% static 'gandharva/img/band.png' %}">
         <div class="container-fluid" style="background-color:#33888F">
-            <h1 style="text-align: center;padding-top:4vh;color:#fff;font-weight: bold" data-sal="slide-up"
+            <h1 style="text-align: center;padding-top:1vh;color:#fff;font-weight: bold" data-sal="slide-up"
                 data-sal-easing="ease-out-bounce"
                 data-sal-delay="100" data-sal-duration="800">
                 Events</h1>
-            <br>
+
             {% for event in events %}
                 {% if forloop.first %}
                     <div class="row">{% endif %}
-            <div class="col-sm-3 eventDiv hvr-bounce-to-top"
-                 style="background-image:url({% static event.img %}); background-repeat: no-repeat; background-size: cover; width: 300px;height: 300px"
-                 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="100" data-sal-duration="800">
-                <h2 class="eventTitle">{{ event.name }}</h2>
-                <p class="eventDescription">
-                    {{ event.description }}
-                </p>
+            <div class="col-sm-2 eventDiv hvr-bounce-to-top"
+                 style="background-image:url({% static event.img %}); background-repeat: no-repeat; background-size: cover; width: 480px;height: 240px"
+                 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="50" data-sal-duration="500">
+                <h3 class="eventTitle">{{ event.name }}</h3>
                 <form method="post" action={% url event.link_to %}>
                     {% csrf_token %}
                     <input type="hidden" name="dept" value={{ event.name }}>
@@ -102,9 +105,8 @@
                         More
                     </button>
                 </form>
-
             </div>
-            {% if forloop.counter|divisibleby:3 %}
+            {% if forloop.counter|divisibleby:5 %}
                 </div>
                 <div class="row">{% endif %}
             {% if forloop.last %}
@@ -119,29 +121,16 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6">
-                    <img style="margin-top: 4vh" class="img-fluid" src="{% static 'gandharva/images/guitar2.jpg' %}"
+                    <img class="img-fluid" src="{% static 'gandharva/images/guitar2.jpg' %}"
                          alt="guitar">
                 </div>
                 <div class="col-sm-6">
-                    <h2 style="margin-top: 4vh;text-align: center;font-weight: bold" data-sal="slide-up"
+                    <h2 style="margin-top: 2vh;text-align: center;font-weight: bold" data-sal="slide-up"
                         data-sal-easing="ease-out-bounce" data-sal-delay="100" data-sal-duration="800">About
                         Gandharva</h2>
-                    <p style="margin-top: 4vh;text-align: center" data-sal="slide-up"
-                       data-sal-easing="ease-out-bounce" data-sal-delay="100" data-sal-duration="800">We have created
-                        an extremely positive and relaxed
-                        environment all geared towards developing your skills
-                        whether you are an absolute beginner trying to get off the ground or an accomplished player
-                        looking to
-                        move to the next level. Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry. Lorem
-                        Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-
-                    <div style="display: flex;align-items: center;justify-content: center; margin-bottom:22px">
-                        <button data-sal="slide-up"
-                                data-sal-easing="ease-out-bounce" data-sal-delay="100" data-sal-duration="800"
-                                class="btn btn-primary">View Date & Place
-                            <i class="fa fa-angle-right"></i></button>
-                    </div>
+                    <p style="margin-top:2vh;text-align: center" data-sal="slide-up"
+                       data-sal-easing="ease-out-bounce" data-sal-delay="100" data-sal-duration="800">
+                        {{ About }}
                 </div>
             </div>
         </div>
@@ -153,7 +142,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h2 class="text-center font-weight-bold text-white" data-sal="slide-up"
+                        <br>
+                        <h2 class="text-center font-weight-bold text-white" style="padding-top: 6px" data-sal="slide-up"
                             data-sal-easing="ease-out-bounce" data-sal-delay="100" data-sal-duration="800">Our
                             Sponsors</h2>
                         <p></p>
@@ -174,6 +164,7 @@
                                             </div>
                                             <div class="separator">&nbsp;</div>
                                             <div class="message text-center text-gray">{{ sponsor.sponsor_name }}</div>
+                                            <p style="font-weight: 300;font-size: 0.9rem;">Partner</p>
                                         </div>
                                     </div>
                                 {% endfor %}
@@ -193,11 +184,10 @@
                     frameborder="0" style="border:0;width:100%;height:100%" allowfullscreen></iframe>
         </div>
     </section>
-    {% block scripts %}
-        <script type="text/javascript" src="{% static 'gandharva/js/coundown-timer.js' %}"></script>
-        <script type="text/javascript" src="{% static 'gandharva/js/main.js' %}"></script>
-        <script type="text/javascript" src="{% static 'gandharva/js/slick.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'gandharva/js/particles.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'gandharva/js/home.js' %}"></script>
-    {% endblock %}
+{% endblock %}
+{% block scripts %}
+    <script type="text/javascript" src="{% static 'gandharva/js/coundown-timer.js' %}"></script>
+    <script type="text/javascript" src="{% static 'gandharva/js/slick.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'gandharva/js/particles.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'gandharva/js/home.js' %}"></script>
 {% endblock %}

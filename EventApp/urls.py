@@ -1,13 +1,11 @@
 from django.conf.urls import url, include
 from . import views
-from django.views.generic import TemplateView
+from django.views.generic.base import TemplateView
 
-# Url defined here, can access the page related to the url by adding the path
+#Url defined here, can access the page related to the url by adding the path
 urlpatterns = [
-    # url(r'^$', views.home, name='home'),
-    url(r'^$', views.comingSoon, name='comingSoon'),
-    url(r'home/$', views.home, name='home'),
-    url(r'^events/$', views.event, name='events'),
+    url(r'^$', views.home, name='home'),
+    url(r'^events/$',views.event, name='events'),
     url(r'^events/details/$', views.details, name='details'),
     url(r'^contactus/$', views.contactus, name='contactus'),
     url(r'^login/register/$', views.register, name='register'),
@@ -15,8 +13,11 @@ urlpatterns = [
     url(r'^logout/$', views.user_logout, name='user_logout'),
     url(r'^auth/', include('social_django.urls', namespace='social')),
     url(r'^RegisterHead/$', views.RegisterHead, name='RegisterHead'),
-    url(r'^sw.js', (TemplateView.as_view(
-        template_name="sw.js",
-        content_type='application/javascript',
-    )), name='sw.js'),
+    url(r'^service-worker.js', (TemplateView.as_view(
+    template_name="service-worker.js",
+    content_type='application/javascript',
+    )), name='service-worker.js'),
 ]
+
+
+

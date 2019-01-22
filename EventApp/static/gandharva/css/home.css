@@ -17,73 +17,32 @@ html, body {
     z-index: 10;
 }
 
-#particle h1 {
+.mainTitle {
     position: absolute;
-    top: 30vh;
-    left: 24vw;
+    top: 34vh;
+    left: 36vw;
+    text-align: center;
+}
+
+.mainTitle h1 {
     z-index: 500;
     color: #fff;
     word-wrap: break-word;
-    text-align: center;
-    font-size: 12vw;
+    font-size: 80px;
     font-family: 'Lobster', cursive;
+    text-align: center;
 }
 
-/*
-.navbar {
-    background-color: #1B7B98 !important;
-    opacity: 1;
-}
-
-nav .navbar-nav li a {
-    color: #000000 !important;
-    opacity: 1;
-}
-
-.navbar-nav > li > .dropdown-menu {
-    opacity: 1;
-    background-color: #1B7B98;
-}
-
-.navbar-nav > li > .dropdown-menu :hover {
-    background-color: #fff;
-}
-
-.solid {
-    opacity: 1;
-}
-
-.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
-    background-color: #fff;
-    color: #16728f !important;
-}
-
-nav li .active a {
-    background-color: #fff;
-    color: #16728f !important;
-}
-
-.nav.navbar-nav li a {
-    color: white !important;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin: 4px;
-}
-*/
 /*************************
 *******Explore CSS******
 **************************/
 
 #explore {
-    background-color: #C34C39;
-    background-image: url("../images/event-bg.jpg");
-    background-position: center bottom;
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-color: #6fa4c3;
     position: relative;
     overflow: hidden;
     padding-top: 4vh;
-    padding-bottom: 10vh;
+    padding-bottom: 8vh;
 }
 
 .watch img {
@@ -92,11 +51,12 @@ nav li .active a {
     top: -12px;
 }
 
-#explore h1 {
+#explore h2 {
     color: #fff;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     text-align: center;
     font-weight: bold;
+    text-shadow: 2px 2px #000000;
 }
 
 #countdown {
@@ -137,6 +97,7 @@ nav li .active a {
 #countdown p {
     font-weight: bold;
     text-align: center;
+    text-shadow: 1px 1px #000000;
 }
 
 #countdown li:last-child {
@@ -147,6 +108,7 @@ nav li .active a {
     display: block;
     font-size: 28px;
     font-weight: bold;
+    text-shadow: 1px 1px #000000;
     height: 70px;
     line-height: 70px;
     width: 70px;
@@ -181,7 +143,6 @@ nav li .active a {
 }
 
 #countdown li:before {
-    background-color: #FFFFFF;
     content: "";
     height: 11px;
     left: 0;
@@ -191,7 +152,6 @@ nav li .active a {
 }
 
 #countdown li:after {
-    background-color: #FFFFFF;
     content: "";
     height: 11px;
     right: 0;
@@ -217,7 +177,7 @@ nav li .active a {
 }
 
 .guitar2 img {
-    padding-top: 3%;
+    padding-top: 1vh;
 }
 
 .about-content {
@@ -235,7 +195,6 @@ nav li .active a {
 
 .about-content p {
     font-size: 17px;
-    /*font-family: 'Dosis',sans-serif;*/
 }
 
 #about .btn-primary {
@@ -249,30 +208,6 @@ nav li .active a {
 #about .btn-primary:hover {
     background-color: #126d55
 }
-
-/*
-.clock {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    z-index: 100;
-    font-size: 4.6vw;
-    text-align: center;
-    color: #fff;
-}
-
-.clock h1 {
-    padding-top: 16vh;
-    z-index: 300;
-    color: #fff;
-    font-weight: bold;
-    word-wrap: break-word;
-    text-align: center;
-    margin: 4vw;
-}
-*/
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -291,6 +226,18 @@ nav li .active a {
     .brand img {
         width: 100%;
         height: 120px;
+    }
+
+    .mainTitle h1 {
+        font-size: 60px;
+    }
+
+    .mainTitle {
+        left: 14vw;
+    }
+
+    .mainTitle h3 {
+        font-size: 20px;
     }
 
 }
@@ -351,7 +298,6 @@ img {
     left: 4vw;
     text-align: center;
     z-index: 300;
-    color: #fff;
     font-size: 10vw;
     color: #000;
 }
@@ -367,32 +313,35 @@ img {
 .eventDiv {
     z-index: 10;
     background-color: #b380ff;
-    margin-bottom: 8vh;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 6vh;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
     opacity: 0.84;
+    border-radius: 8px;
 }
 
 .eventTitle {
     z-index: 100;
     padding-top: 4vh;
-    padding-bottom: 2vh;
-    padding-left: 2vw;
+    padding-bottom: 1vh;
+    padding-left: 1vw;
     color: #fff;
     font-weight: bold;
     opacity: 1;
     word-wrap: break-word;
     hyphens: auto;
+    text-shadow: 1px 1px #000000;
 }
 
 .eventDescription {
     z-index: 100;
-    padding-top: 4vh;
+    padding-top: 1vh;
     padding-bottom: 2vh;
     padding-left: 2vw;
     color: #fff;
     opacity: 1;
     font-weight: bold;
+    text-shadow: 1px 1px #000000;
 }
 
 .eventButtons {
@@ -403,11 +352,10 @@ img {
     border: none;
     color: #FFFFFF;
     text-align: center;
-    padding: 1vw;
     transition: all 0.5s;
     cursor: pointer;
-    margin-bottom: 4vh;
-    margin-left: 2vw;
+    position: absolute;
+    bottom: 8vh;
     font-weight: bold;
 }
 
@@ -417,6 +365,7 @@ img {
 
 .hvr-bounce-to-top {
     display: inline-block;
+    border-radius: 8px;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
@@ -447,6 +396,7 @@ img {
     transition-duration: 0.5s;
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
+    border-radius: 8px;
 }
 
 .hvr-bounce-to-top:hover {
@@ -470,7 +420,6 @@ img {
 
 .orange-fade {
     background: #25ade3;
-    /*background: linear-gradient(135deg, #ff910e 0, #ffa841 100%);*/
 }
 
 .pos-r {
@@ -488,7 +437,7 @@ img {
 .text-gray {
     color: #363636;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 12px;
     word-wrap: break-word;
 }
 
@@ -543,7 +492,7 @@ img {
 
 .testimonial-carousel .message {
     width: 100%;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .testimonial-carousel .brand {
@@ -552,7 +501,7 @@ img {
 
 @media (max-width: 575px) {
     .testimonial-carousel .one-slide {
-        height: 200px;
+        height: 240px;
     }
 
     .testimonial-carousel img {
@@ -576,112 +525,3 @@ img {
     width: 100%;
     position: absolute;
 }
-
-/*************************
-******Contact CSS****
-**************************/
-/*
-.contact-section {
-    background-color: #f7ab24;
-    background-image: url("../images/contact-bg.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-}*/
-
-/*.ear-piece {*/
-/*position: absolute;*/
-/*left: 0;*/
-/*top: 0;*/
-/*}*/
-/*
-#contact .container {
-    padding-top: 47px;
-}
-
-#contact h3 {
-    text-transform: inherit;
-    color: #373737;
-}
-
-#contact-section h3 {
-    margin-bottom: 25px
-}
-
-#contact address {
-    font-size: 18px;
-    color: #373737;
-    word-wrap: break-word;
-}
-
-.contact-text {
-    margin-bottom: 35px;
-    display: block;
-}
-
-#contact-section .form-control {
-    border-color: #ae750d;
-    box-shadow: none;
-    outline: 0 none;
-    border-radius: 0;
-    color: #797979;
-    font-size: 18px;
-}
-
-#contact-section .form-control:focus {
-    border-color: #ae750d;
-}
-
-#contact-section input {
-    height: 44px;
-}
-
-#contact-section textarea {
-    height: 90px;
-    resize: none;
-}
-
-#contact-section .btn-primary {
-    background-color: #373737;
-    color: #f7ab24;
-    border: none;
-    font-size: 24px;
-    padding: 6px 42px;
-    margin-bottom: 20px;
-    margin-top: 10px
-}
-
-#contact-section .btn-primary:hover {
-    background-color: #212020;
-    color: #fff
-}
-*/
-/*************************
-******Footer CSS****
-**************************/
-/*
-#footer {
-    background-color: #212121;
-    background-image: url("../images/footer-bg.jpg");
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #FFFFFF;
-    font-size: 20px;
-    padding-top: 20px;
-    padding-bottom: 10px;
-}
-
-a {
-    -webkit-transition: 300ms;
-    -moz-transition: 300ms;
-    -o-transition: 300ms;
-    transition: 300ms;
-}
-
-a:focus,
-a:hover {
-    text-decoration: none;
-    outline: none
-}
-*/

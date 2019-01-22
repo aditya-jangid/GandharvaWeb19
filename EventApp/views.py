@@ -2,8 +2,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login , logout
 from django.urls import reverse
-from EventApp.models import Department, EventMaster, Carousel, SponsorMaster, RoleAssignment, RoleMaster
-from .forms import UserRegistration , ContactUsForm , HeadRegistration
+from EventApp.models import Department, EventMaster, Carousel, SponsorMaster, RoleAssignment, RoleMaster, MyUser, EventDepartment,GandharvaHome
+from .forms import UserRegistration , ContactUsForm, RoleMasterForm
 from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
 from EventApp.decorators import user_Role_head
@@ -18,7 +18,8 @@ def home(request):
         'events': Department.objects.all(),
         'sponsors': SponsorMaster.objects.all(),
         'carouselImage': Carousel.objects.all(),
-        'gandharvaDate': 'March 20, 2019'
+        'gandharvaDate': GandharvaHome.objects.get(title__startswith= "Date").data,
+        'About' : GandharvaHome.objects.get(title__startswith= "About").data,
     }
 
     return render(request, 'gandharva/index.html', args)
@@ -36,39 +37,43 @@ def comingSoon(request):
 #Events page of all Departments
 def event(request):
     if request.POST:
-        dept = request.POST.get('dept') + ' Events'
+        dept = request.POST.get('dept')
+        dept_choose = Department.objects.get(name=dept)
     else:
         dept = 'All Events'
     args1 = {
         'pageTitle': dept,
-        'events': EventMaster.objects.all(),
+        'events': EventDepartment.objects.filter(department = dept_choose),
+        'dept_choosen': dept_choose
     }
     return render(request, 'events/event1.html', args1)
 
 #Details of Individual Events
 def details(request):
     event_name = request.POST.get('event')
+
     arg = {
         'events_list': EventMaster.objects.all(),
         'pageTitle': EventMaster.objects.get(event_name__startswith=event_name).event_name,
         'event': EventMaster.objects.get(event_name__startswith=event_name),
-        'rules': EventMaster.objects.get(event_name__startswith=event_name).rules.split('. '),
+        'dept': EventDepartment.objects.get(event = EventMaster.objects.get(event_name__startswith=event_name)),
     }
     return render(request, 'events/category1Event1.html', arg)
 
 #ContactUs View (Form created)
 def contactus(request):
+    success_form = False
     if request.method == 'POST':
         form = ContactUsForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('contactus')
+            success_form = True
         else:
             print(form.errors)
     else:
         form = ContactUsForm()
 
-    return render(request, 'gandharva/contactus.html',{'form':form})
+    return render(request, 'gandharva/contactus.html',{'form':form, 'success_form' : success_form})
 
 #Registration for normal User and log in user after registration Immediately
 def register(request):
@@ -115,28 +120,40 @@ def user_login(request):
         else:
             return render(request, 'events/login.html', {})
 
+def payment (request):
+    return render(request, 'user/paymentDetails.html', {})
+
 #Head Login View only to be used for Heads
 @user_passes_test(lambda u: u.is_superuser)
 def RegisterHead(request):
+    Roles = RoleMaster.objects.all();
     if request.method == 'POST':
-        form = UserRegistration(request.POST)
-        if form.is_valid():
-            user=form.save()
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
+        userform = UserRegistration(request.POST)
+        roleform = RoleMasterForm(request.POST)
+        if userform.is_valid() and roleform.is_valid():
+            user = userform.save()
+            username = userform.cleaned_data.get('username')
+            password = userform.cleaned_data.get('password')
             user.set_password(password)
             user.save()
+            roleassign = RoleAssignment()
+            roleassign.user=user
+            roleassign.role = roleform.cleaned_data.get('name')
+            roleassign.save()
       #       group = Group.objects.get(name='groupname')
       #      user.groups.add(group)
       #login(request, user, backend='social_core.backends.google.GoogleOAuth2')
             return redirect('home')
         else:
-            print (form.errors)
+            print (userform.errors)
+            print (roleform.errors)
+
 
     else:
-        form = UserRegistration()
+        userform = UserRegistration()
+        roleform = RoleMasterForm
 
-    return render(request, 'events/RegisterHead.html', {'form': form})
+    return render(request, 'events/RegisterHead.html', {'userform': userform , 'roleform': roleform, 'roles':Roles})
 
 
 

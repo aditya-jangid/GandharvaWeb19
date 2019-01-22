@@ -50,10 +50,6 @@
         z-index: 10;
     }
 
-     /*#myCountdown{*/
-        /*left: 6vw;*/
-    /*}*/
-
 }
 
 /* sm */
@@ -117,10 +113,9 @@
     .twit {
         left: -5%;
     }
-
-     /*#myCountdown{*/
-        /*left: 6vw;*/
-    /*}*/
+    .mainTitle h2{
+        font-size: 40px;
+    }
 
 }
 
@@ -282,8 +277,8 @@
         padding: 70px 25px 110px;
     }
 
-     #myCountdown{
-        left: 6vw;
+    .mainTitle h2{
+        font-size: 40px;
     }
 
 }
@@ -461,8 +456,8 @@
         background-size: cover;
     }
 
-    #myCountdown{
-        left: 6vw;
+    .mainTitle h2{
+        font-size: 40px;
     }
 
 }
