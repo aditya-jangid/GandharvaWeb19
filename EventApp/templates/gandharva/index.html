@@ -164,7 +164,7 @@
     {#                                            </div>#}
     {#                                            <div class="separator">&nbsp;</div>#}
     {#                                            <div class="message text-center text-gray">{{ sponsor.sponsor_name }}</div>#}
-    {#                                            <p style="font-weight: 300;font-size: 0.9rem;">Partner</p>#}
+    {#                                            <p style="font-weight: 300;font-size: 0.9rem;">{{ sponsor.sponsor_type }}</p>#}
     {#                                        </div>#}
     {#                                    </div>#}
     {#                                {% endfor %}#}
@@ -205,7 +205,7 @@
                                         <div class="separator">&nbsp;</div>
                                         <div class="message text-center text-gray"
                                              style="font-size: 1rem">{{ sponsor.sponsor_name }}</div>
-                                        <p style="font-weight: 300;font-size: 0.9rem;">Partner</p>
+                                        <p style="font-weight: 300;font-size: 0.9rem;">{{ sponsor.sponsor_type }}</p>
                                     </div>
                                 </div>
                             {% endfor %}
