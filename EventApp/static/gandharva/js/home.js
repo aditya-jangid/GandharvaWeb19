@@ -12,7 +12,7 @@ $("#countdown").countdown({
         // callback function
     });
 
-$(document).ready(function () {
+// $(document).ready(function () {
     $(".testimonial-carousel").slick({
         infinite: !0,
         slidesToShow: 4,
@@ -38,7 +38,7 @@ $(document).ready(function () {
             }
         }]
     });
-});
+// });
 
 particlesJS('particles-js',
 
