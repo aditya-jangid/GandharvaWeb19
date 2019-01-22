@@ -1,6 +1,6 @@
 #inluce the models to be viewed here
 from django.contrib import admin
-from .models import EventMaster,EventDepartment,Department,SponsorMaster,Carousel,ContactUs,MyUser,RoleAssignment,RoleMaster, GandharvaHome
+from .models import *
 
 
 
@@ -15,3 +15,4 @@ admin.site.register(SponsorMaster)
 admin.site.register(Carousel)
 admin.site.register(ContactUs)
 admin.site.register(GandharvaHome)
+admin.site.register(College)
