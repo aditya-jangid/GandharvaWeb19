@@ -1,5 +1,6 @@
 from django.conf.urls import url, include
 from . import views
+from django.views.generic.base import TemplateView
 
 #Url defined here, can access the page related to the url by adding the path
 urlpatterns = [
@@ -12,6 +13,10 @@ urlpatterns = [
     url(r'^logout/$', views.user_logout, name='user_logout'),
     url(r'^auth/', include('social_django.urls', namespace='social')),
     url(r'^RegisterHead/$', views.RegisterHead, name='RegisterHead'),
+    url(r'^service-worker.js', (TemplateView.as_view(
+    template_name="service-worker.js",
+    content_type='application/javascript',
+    )), name='service-worker.js'),
 ]
 
 
