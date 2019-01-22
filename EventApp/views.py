@@ -26,8 +26,8 @@ def home(request):
 
 #Events page of all Departments
 def event(request):
-    if request.POST:
-        dept = request.POST.get('dept')
+    if request.GET:
+        dept = request.GET.get('dept')
         dept_choose = Department.objects.get(name=dept)
     else:
         dept = 'All Events'
@@ -40,7 +40,7 @@ def event(request):
 
 #Details of Individual Events
 def details(request):
-    event_name = request.POST.get('event')
+    event_name = request.GET.get('event')
 
     arg = {
         'events_list': EventMaster.objects.all(),
