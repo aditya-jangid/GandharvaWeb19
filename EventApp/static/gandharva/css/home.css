@@ -420,7 +420,7 @@ img {
 .text-gray {
     color: #363636;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 12px;
     word-wrap: break-word;
 }
 
@@ -475,7 +475,7 @@ img {
 
 .testimonial-carousel .message {
     width: 100%;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .testimonial-carousel .brand {
@@ -484,7 +484,7 @@ img {
 
 @media (max-width: 575px) {
     .testimonial-carousel .one-slide {
-        height: 200px;
+        height: 240px;
     }
 
     .testimonial-carousel img {
