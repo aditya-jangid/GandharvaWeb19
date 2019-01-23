@@ -8,15 +8,6 @@ html, body {
     background-color: #f2f2f2;
 }
 
-#particle {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    z-index: 10;
-}
-
 .mainTitle {
     position: absolute;
     top: 34vh;
@@ -350,7 +341,7 @@ img {
 #particle {
     z-index: 900;
     position: absolute;
-    top: 0;
+    top: 70px;
     width: 100%;
     height: auto;
 }
