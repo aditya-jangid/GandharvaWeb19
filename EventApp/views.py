@@ -66,6 +66,7 @@ def contactus(request):
     return render(request, 'gandharva/contactus.html',{'form':form, 'success_form' : success_form})
 
 #Registration for normal User and log in user after registration Immediately
+@user_passes_test(lambda u: u.is_superuser)
 def register(request):
     if request.method == 'POST':
         form = UserRegistration(request.POST)
@@ -86,11 +87,13 @@ def register(request):
     return render(request, 'events/register.html', {'form': form})
 
 #logout Option View appears only after login
+@user_passes_test(lambda u: u.is_superuser)
 def user_logout(request):
         logout(request)
         return redirect('home')
 
 #Login for user to Existing Account
+@user_passes_test(lambda u: u.is_superuser)
 def user_login(request):
 
         if request.method == 'POST':
