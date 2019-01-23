@@ -24,13 +24,14 @@ $('.testimonial-carousel-controls .next').click(function () {
 
 
 owl.owlCarousel({
-    loop: true,
+    loop: false,
     margin: 10,
     navigation: false,
     responsiveClass: true,
     responsive: {
         0: {
             items: 1,
+            loop: true
         },
         600: {
             items: 3,
