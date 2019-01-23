@@ -154,3 +154,6 @@ def RegisterHead(request):
  #   print (userget.role)
 
 
+def test(request):
+
+    return
