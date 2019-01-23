@@ -36,7 +36,7 @@ def event(request):
         'events': EventDepartment.objects.filter(department = dept_choose),
         'dept_choosen': dept_choose
     }
-    return render(request, 'events/event1.html', args1)
+    return render(request, 'events/newEvent.html', args1)
 
 #Details of Individual Events
 def details(request):

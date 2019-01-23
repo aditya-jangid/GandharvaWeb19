@@ -1,0 +1,65 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}{{ pageTitle }}{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'events/css/events.css' %}">
+{% endblock %}
+{% block body %}
+
+    <div class="container-fluid"
+         style="background:linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('{% static dept_choosen.banner_src %}');width: 100%;height:186px;background-size:cover;">
+        <h1 class="title" data-sal="slide-up" data-sal-easing="ease-out-bounce"
+            data-sal-delay="500" data-sal-duration="800">{{ pageTitle }}</h1>
+    </div>
+    <br>
+    <div class="container">
+        {% for event in events %}
+            <div class="row">
+                <div id="eventImage" class="col-sm-12 col-md-6"
+                     style="background-image: url('{% static event.event.container_src %}');background-size: cover">
+                    <div id="eventImageTitle" style="margin:20px;height:300px;">
+                        <div
+                                style="background:linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5));height: inherit;text-align: center">
+                            <h2 style="color:#fff;word-wrap: break-word;padding-top:12vh">{{ event.event.event_name }}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6" data-sal="slide-up" data-sal-easing="ease-out-bounce"
+                     data-sal-delay="300" data-sal-duration="800">
+                    <h1 class="eventTitle colorlib-heading">{{ event.event.event_name }}</h1>
+                    <p class="eventDescription">
+                        {{ event.event.objective }}
+                    </p>
+                    <div class="contact">
+                        <h4>Contact:</h4>
+                        <p>Sanul : 123456789</p>
+                        <p>Sanul : 123456789</p>
+                    </div>
+                    <div class="team">
+                        <h4>Team and Fee
+                            Structure</h4>
+                        <p>
+                            Max {{ event.team_size }}
+                            Participants per Team & ₹ {{ event.entry_fee }} per team.</p>
+                    </div>
+
+
+                    <form method="get" action="{% url 'details' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="event" value="{{ event.event.event_name }}">
+                        <button type="submit" class="btn btn-primary eventButtons">Rules
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <br>
+        {% endfor %}
+    </div>
+    <br>
+{% endblock %}
+{% block scripts %}
+    <script src="{% static 'events/js/events.js' %}"></script>
+{% endblock %}
+

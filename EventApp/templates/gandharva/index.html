@@ -118,7 +118,7 @@
             {% for event in events %}
                 {% if forloop.first %}
                     <div class="row">{% endif %}
-            <div class="col-sm-2 eventDiv hvr-bounce-to-top"
+            <div class="col-sm-2 eventDiv"
                  style="background-image:url({% static event.img %}); background-repeat: no-repeat; background-size: cover; width: 480px;height: 240px"
                  data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="30" data-sal-duration="600">
                 <h3 class="eventTitle">{{ event.name }}</h3>
