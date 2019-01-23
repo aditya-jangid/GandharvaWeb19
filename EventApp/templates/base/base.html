@@ -2,6 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Don't remove -->
+    <meta name="google-site-verification" content="QJtZpdo50J6PgZpzLE-2ancGmuNBvPzKxCCpBVE2KaI"/>
+    <!-- Google Verification -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -40,31 +43,31 @@
                     Events
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <form method="post" action="{% url 'events' %}">
-                            {% csrf_token %}
-                            <input type="hidden" name="dept" value="Computer">
-                            <button type="submit" class="dropdown-item dropdownStyle">Computer</button>
-                        </form>
-                        <form method="post" action="{% url 'events' %}">
-                            {% csrf_token %}
-                            <input type="hidden" name="dept" value="IT">
-                            <button type="submit" class="dropdown-item dropdownStyle">IT</button>
-                        </form>
-                         <form method="post" action="{% url 'events' %}">
-                            {% csrf_token %}
-                            <input type="hidden" name="dept" value="ENTC">
-                            <button type="submit" class="dropdown-item dropdownStyle">ENTC</button>
-                        </form>
-                        <form method="post" action="{% url 'events' %}">
-                            {% csrf_token %}
-                            <input type="hidden" name="dept" value=Mechanical>
-                            <button type="submit" class="dropdown-item dropdownStyle">Mechanical</button>
-                        </form>
-                        <form method="post" action="{% url 'events' %}">
-                            {% csrf_token %}
-                            <input type="hidden" name="dept" value=Civil>
-                            <button type="submit" class="dropdown-item dropdownStyle">Civil</button>
-                        </form>
+                    <form method="post" action="{% url 'events' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="dept" value="Computer">
+                        <button type="submit" class="dropdown-item dropdownStyle">Computer</button>
+                    </form>
+                    <form method="post" action="{% url 'events' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="dept" value="IT">
+                        <button type="submit" class="dropdown-item dropdownStyle">IT</button>
+                    </form>
+                    <form method="post" action="{% url 'events' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="dept" value="ENTC">
+                        <button type="submit" class="dropdown-item dropdownStyle">ENTC</button>
+                    </form>
+                    <form method="post" action="{% url 'events' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="dept" value=Mechanical>
+                        <button type="submit" class="dropdown-item dropdownStyle">Mechanical</button>
+                    </form>
+                    <form method="post" action="{% url 'events' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="dept" value=Civil>
+                        <button type="submit" class="dropdown-item dropdownStyle">Civil</button>
+                    </form>
                 </div>
             </li>
             <li class="nav-item">
@@ -148,13 +151,13 @@
 </footer>
 
 <script>
-    if('serviceWorker' in navigator) {
+    if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('service-worker.js', {
-      scope: './'
-      }).then(function(reg) {
-      console.log('Service worker has been registered for scope:'+ reg.scope);
-      });
-      }
+            scope: './'
+        }).then(function (reg) {
+            console.log('Service worker has been registered for scope:' + reg.scope);
+        });
+    }
 </script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
