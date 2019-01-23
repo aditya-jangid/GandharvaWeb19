@@ -10,9 +10,10 @@ html, body {
 
 .mainTitle {
     position: absolute;
-    top: 34vh;
-    left: 36vw;
+    top: 18vh;
+    left: 32.6vw;
     text-align: center;
+    /*width: 100%;*/
 }
 
 .mainTitle h1 {
@@ -64,29 +65,29 @@ html, body {
     text-align: center;
 }
 
-#countdown .day {
-    background-color: #45b29d;
-    border-top: 1px solid #6ac1b1;
-    border-left: 1px solid #6ac1b1;
-}
+/*#countdown .day {*/
+/*background-color: #45b29d;*/
+/*border-top: 1px solid #6ac1b1;*/
+/*border-left: 1px solid #6ac1b1;*/
+/*}*/
 
-#countdown .hr {
-    background-color: #efc94c;
-    border-top: 1px solid #f2d470;
-    border-left: 1px solid #f2d470;
-}
+/*#countdown .hr {*/
+/*background-color: #efc94c;*/
+/*border-top: 1px solid #f2d470;*/
+/*border-left: 1px solid #f2d470;*/
+/*}*/
 
-#countdown .min {
-    background-color: #e27a3f;
-    border-top: 1px solid #e89565;
-    border-left: 1px solid #e89565;
-}
+/*#countdown .min {*/
+/*background-color: #e27a3f;*/
+/*border-top: 1px solid #e89565;*/
+/*border-left: 1px solid #e89565;*/
+/*}*/
 
-#countdown .sec {
-    background-color: #df5a49;
-    border-top: 1px solid #e57b6d;
-    border-left: 1px solid #e57b6d;
-}
+/*#countdown .sec {*/
+/*background-color: #df5a49;*/
+/*border-top: 1px solid #e57b6d;*/
+/*border-left: 1px solid #e57b6d;*/
+/*}*/
 
 /*************************
 *******About CSS**********
@@ -157,15 +158,24 @@ html, body {
     }
 
     .mainTitle h1 {
-        font-size: 60px;
+        font-size: 52px;
     }
 
     .mainTitle {
-        left: 14vw;
+        top: 4vh;
+        left: 8vw;
     }
 
     .mainTitle h3 {
         font-size: 20px;
+    }
+
+    .mainTitle h2 {
+        font-size: 26px;
+    }
+
+    .mainTitle p {
+        font-size: 16px;
     }
 
 }
