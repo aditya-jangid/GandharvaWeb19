@@ -16,7 +16,7 @@
 {% block body %}
     <section style="height:100vh">
         <div class="container-fluid"
-             style="background-color: rgba(0,0,0,0.8); padding:0;height:100%;width: 100%;margin-top:8vh">
+             style="background-color: rgba(0,0,0,0.8); padding:0;height:100%;width: 100%;margin-top:70px">
             <div class="row">
                 <div class="col-12">
                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel"
@@ -60,25 +60,24 @@
                 <div class="col-sm-12 col-md-6">
                     <h2 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="100"
                         data-sal-duration="800">Gandharva'19 in</h2>
-                    <ul id="countdown" data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="100"
-                        data-sal-duration="800">
-                        <li>
-                            <span class="days time-font">00</span>
-                            <p style="text-align: center" class="">Days</p>
-                        </li>
-                        <li>
-                            <span class="hours time-font">00</span>
-                            <p class="" style="text-align: center">Hours </p>
-                        </li>
-                        <li>
-                            <span class="minutes time-font">00</span>
-                            <p class="" style="text-align: center">Minutes</p>
-                        </li>
-                        <li>
-                            <span class="seconds time-font">00</span>
-                            <p class="" style="text-align: center">Seconds</p>
-                        </li>
-                    </ul>
+                    <div id="countdown" style="display: flex;flex-direction: row;justify-content:space-between">
+                        <div class="col text-center text-white mt-1 ml-4 mr-4 mb-1">
+                            <h2 class="day days">00</h2>
+                            <p>Days</p>
+                        </div>
+                        <div class="col text-center text-white mt-1 ml-4 mr-4 mb-1">
+                            <h2 class=" hr hours">00</h2>
+                            <p>Hours</p>
+                        </div>
+                        <div class="col text-center text-white mt-1 ml-4 mr-4 mb-1">
+                            <h2 class=" min minutes">00</h2>
+                            <p>Minutes</p>
+                        </div>
+                        <div class="col text-center text-white mt-1 ml-4 mr-4 mb-1">
+                            <h2 class="sec seconds">00</h2>
+                            <p>Seconds</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -97,7 +96,7 @@
                     <div class="row">{% endif %}
             <div class="col-sm-2 eventDiv hvr-bounce-to-top"
                  style="background-image:url({% static event.img %}); background-repeat: no-repeat; background-size: cover; width: 480px;height: 240px"
-                 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="50" data-sal-duration="500">
+                 data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="30" data-sal-duration="600">
                 <h3 class="eventTitle">{{ event.name }}</h3>
                 <form method="post" action={% url event.link_to %}>
                     {% csrf_token %}
@@ -165,7 +164,7 @@
     {#                                            </div>#}
     {#                                            <div class="separator">&nbsp;</div>#}
     {#                                            <div class="message text-center text-gray">{{ sponsor.sponsor_name }}</div>#}
-    {#                                            <p style="font-weight: 300;font-size: 0.9rem;">Partner</p>#}
+    {#                                            <p style="font-weight: 300;font-size: 0.9rem;">{{ sponsor.sponsor_type }}</p>#}
     {#                                        </div>#}
     {#                                    </div>#}
     {#                                {% endfor %}#}
@@ -195,7 +194,7 @@
                             <div class="control prev"><i class="fa fa-chevron-left text-white">&nbsp;</i></div>
                             <div class="control next"><i class="fa fa-chevron-right text-white">&nbsp;</i></div>
                         </div>
-                        <div class="owl-carousel owl-centered">
+                        <div class="owl-carousel" style="margin-right: auto;margin-left: auto">
                             {% for sponsor in sponsors %}
                                 <div class="one-slide white">
                                     <div class="testimonial w-100 h-100 p-3 text-center">
@@ -206,7 +205,7 @@
                                         <div class="separator">&nbsp;</div>
                                         <div class="message text-center text-gray"
                                              style="font-size: 1rem">{{ sponsor.sponsor_name }}</div>
-                                        <p style="font-weight: 300;font-size: 0.9rem;">Partner</p>
+                                        <p style="font-weight: 300;font-size: 0.9rem;">{{ sponsor.sponsor_type }}</p>
                                     </div>
                                 </div>
                             {% endfor %}
