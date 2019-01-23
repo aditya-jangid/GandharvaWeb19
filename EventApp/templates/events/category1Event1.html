@@ -5,18 +5,6 @@
 {% block css %}
     <link rel="stylesheet" type="text/css" href="{% static 'events/css/events.css' %}">
 {% endblock %}
-
-{% block dropdown %}
-    {% for event in events_list %}
-        <form method="post" action={% url 'details' %}>
-            {% csrf_token %}
-            <input type="hidden" name="event" value={{ event.event_name }}/>
-            <button type="submit" class="dropdown-item">{{ event.event_name }}</button>
-        </form>
-
-    {% endfor %}
-{% endblock %}
-
 {% block body %}
     <div class="container-fluid"
          style="background:linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('{% static dept.department.banner_src %}');width: 100%;height:300px;background-size:cover;">
