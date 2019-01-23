@@ -138,6 +138,10 @@ STATIC_URL = '/static/'
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='519854616069-hj7chgsltbjad2p5mcvv8241ruob2e5m.apps.googleusercontent.com'  #Paste CLient Key
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'x77Vt0Zv3fTqjpCLN-Ec4Irg' #Paste Secret Key
 
+INSTAMOJO_KEY = '3ec2051ed0ae46ae17db917ee1ea381b'
+INSTAMOJO_AUTH_TOKEN = 'b80aafa7472907fbd0b60a3861c5731f'
+INSTAMOJO_SALT = 'dc3ff23932af4594aa376c3793d803fe'
+
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 LOGIN_URL = 'login'

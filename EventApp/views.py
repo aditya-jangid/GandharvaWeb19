@@ -1,30 +1,36 @@
-#inlcude the various features which are to be used in Views here
+# inlcude the various features which are to be used in Views here
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login , logout
+from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
-from EventApp.models import Department, EventMaster, Carousel, SponsorMaster, RoleAssignment, RoleMaster, MyUser, EventDepartment,GandharvaHome
-from .forms import UserRegistration , ContactUsForm, RoleMasterForm
+from EventApp.models import Department, EventMaster, Carousel, SponsorMaster, RoleAssignment, RoleMaster, MyUser, \
+    EventDepartment, GandharvaHome
+from GandharvaWeb19 import settings
+from .forms import UserRegistration, ContactUsForm, RoleMasterForm
 from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
 from EventApp.decorators import user_Role_head
 
+# for payments
+from instamojo_wrapper import Instamojo
+
+
 # Create your views here.
 
 
-#Home page Functionality
+# Home page Functionality
 def home(request):
-
     args = {
         'events': Department.objects.all(),
         'sponsors': SponsorMaster.objects.all(),
         'carouselImage': Carousel.objects.all(),
-        'gandharvaDate': GandharvaHome.objects.get(title__startswith= "Date").data,
-        'About' : GandharvaHome.objects.get(title__startswith= "About").data,
+        'gandharvaDate': GandharvaHome.objects.get(title__startswith="Date").data,
+        'About': GandharvaHome.objects.get(title__startswith="About").data,
     }
 
     return render(request, 'gandharva/index.html', args)
 
-#Events page of all Departments
+
+# Events page of all Departments
 def event(request):
     if request.GET:
         dept = request.GET.get('dept')
@@ -33,12 +39,13 @@ def event(request):
         dept = 'All Events'
     args1 = {
         'pageTitle': dept,
-        'events': EventDepartment.objects.filter(department = dept_choose),
+        'events': EventDepartment.objects.filter(department=dept_choose),
         'dept_choosen': dept_choose
     }
     return render(request, 'events/event1.html', args1)
 
-#Details of Individual Events
+
+# Details of Individual Events
 def details(request):
     event_name = request.GET.get('event')
 
@@ -46,11 +53,12 @@ def details(request):
         'events_list': EventMaster.objects.all(),
         'pageTitle': EventMaster.objects.get(event_name__startswith=event_name).event_name,
         'event': EventMaster.objects.get(event_name__startswith=event_name),
-        'dept': EventDepartment.objects.get(event = EventMaster.objects.get(event_name__startswith=event_name)),
+        'dept': EventDepartment.objects.get(event=EventMaster.objects.get(event_name__startswith=event_name)),
     }
     return render(request, 'events/category1Event1.html', arg)
 
-#ContactUs View (Form created)
+
+# ContactUs View (Form created)
 def contactus(request):
     success_form = False
     if request.method == 'POST':
@@ -63,14 +71,15 @@ def contactus(request):
     else:
         form = ContactUsForm()
 
-    return render(request, 'gandharva/contactus.html',{'form':form, 'success_form' : success_form})
+    return render(request, 'gandharva/contactus.html', {'form': form, 'success_form': success_form})
 
-#Registration for normal User and log in user after registration Immediately
+
+# Registration for normal User and log in user after registration Immediately
 def register(request):
     if request.method == 'POST':
         form = UserRegistration(request.POST)
         if form.is_valid():
-            user=form.save()
+            user = form.save()
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
             user.set_password(password)
@@ -78,42 +87,45 @@ def register(request):
             login(request, user, backend='social_core.backends.google.GoogleOAuth2')
             return redirect('home')
         else:
-            print (form.errors)
+            print(form.errors)
 
     else:
         form = UserRegistration()
 
     return render(request, 'events/register.html', {'form': form})
 
-#logout Option View appears only after login
+
+# logout Option View appears only after login
 def user_logout(request):
-        logout(request)
-        return redirect('home')
+    logout(request)
+    return redirect('home')
 
-#Login for user to Existing Account
+
+# Login for user to Existing Account
 def user_login(request):
-
-        if request.method == 'POST':
-            username = request.POST.get('username')
-            password = request.POST.get('password')
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                    if user.is_active:
-                        login(request, user)
-                        return redirect('home')
-                    else:
-                        print("Your account was inactive.")
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return redirect('home')
             else:
-                messages.error(request, 'Error wrong username/password')
-                return render(request, 'events/login.html', {})
-
+                print("Your account was inactive.")
         else:
+            messages.error(request, 'Error wrong username/password')
             return render(request, 'events/login.html', {})
 
-def payment (request):
+    else:
+        return render(request, 'events/login.html', {})
+
+
+def payment(request):
     return render(request, 'user/paymentDetails.html', {})
 
-#Head Login View only to be used for Heads
+
+# Head Login View only to be used for Heads
 @user_passes_test(lambda u: u.is_superuser)
 def RegisterHead(request):
     Roles = RoleMaster.objects.all();
@@ -127,33 +139,50 @@ def RegisterHead(request):
             user.set_password(password)
             user.save()
             roleassign = RoleAssignment()
-            roleassign.user=user
+            roleassign.user = user
             roleassign.role = roleform.cleaned_data.get('name')
             roleassign.save()
-      #       group = Group.objects.get(name='groupname')
-      #      user.groups.add(group)
-      #login(request, user, backend='social_core.backends.google.GoogleOAuth2')
+            #       group = Group.objects.get(name='groupname')
+            #      user.groups.add(group)
+            # login(request, user, backend='social_core.backends.google.GoogleOAuth2')
             return redirect('home')
         else:
-            print (userform.errors)
-            print (roleform.errors)
+            print(userform.errors)
+            print(roleform.errors)
 
 
     else:
         userform = UserRegistration()
         roleform = RoleMasterForm
 
-    return render(request, 'events/RegisterHead.html', {'userform': userform , 'roleform': roleform, 'roles':Roles})
-
-
+    return render(request, 'events/RegisterHead.html', {'userform': userform, 'roleform': roleform, 'roles': Roles})
 
 
 ## Important Notes:
 # to get user role from models
- #userget = RoleAssignment.objects.get(user=request.user.id)
- #   print (userget.role)
+# userget = RoleAssignment.objects.get(user=request.user.id)
+#   print (userget.role)
 
 
 def test(request):
+    if request.method == 'POST':
+        api = Instamojo(api_key=settings.INSTAMOJO_KEY,
+                        auth_token=settings.INSTAMOJO_AUTH_TOKEN)
 
-    return
+        # Create a new Payment Request
+        response = api.payment_request_create(
+            amount='10',
+            purpose='FIFA 16',
+            send_email=False,
+            email="foo@example.com",
+            redirect_url="http://127.0.0.1/test/"
+        )
+        # print the long URL of the payment request.
+        print(response['payment_request']['longurl'])
+        # print the unique ID(or payment request ID)
+        print(response['payment_request']['id'])
+
+
+        return redirect(response['payment_request']['longurl'])
+    else:
+        return render(request, 'events/test.html')

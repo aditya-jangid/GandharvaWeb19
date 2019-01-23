@@ -1,0 +1,19 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Register{% endblock %}
+{% block css %}
+    <link href="{% static 'events/css/login_signup.css' %}" rel="stylesheet">
+{% endblock %}
+{% block body %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <form action="{% url 'test' %}" method="post">
+    {% csrf_token %}
+        <button>Pay!</button>
+    </form>
+{% endblock body %}
