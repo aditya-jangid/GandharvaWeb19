@@ -27,25 +27,22 @@
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-6" data-sal="slide-up" data-sal-easing="ease-out-bounce"
-                     data-sal-delay="300" data-sal-duration="800">
+                     data-sal-delay="100" data-sal-duration="500">
                     <h1 class="eventTitle colorlib-heading">{{ event.event.event_name }}</h1>
                     <p class="eventDescription">
                         {{ event.event.objective }}
                     </p>
-{#                    <div class="contact">#}
-{#                        <h4>Contact:</h4>#}
-{#                        <p>Sanul : 123456789</p>#}
-{#                        <p>Sanul : 123456789</p>#}
-{#                    </div>#}
+                    {#                    <div class="contact">#}
+                    {#                        <h4>Contact:</h4>#}
+                    {#                        <p>Sanul : 123456789</p>#}
+                    {#                        <p>Sanul : 123456789</p>#}
+                    {#                    </div>#}
                     <div class="team">
-                        <h4>Team and Fee
+                        <h4 style="color: #000;font-weight: 500">Team and Fee
                             Structure:</h4>
-                        <p>
-                            Max {{ event.event.team_size }}
-                            Participants per Team & ₹ {{ event.event.entry_fee }} per team.</p>
+                        <p>Max {{ event.event.team_size }} Participants per Team & ₹ {{ event.event.entry_fee }} per
+                            team.</p>
                     </div>
-
-
                     <form method="get" action="{% url 'details' %}">
                         {% csrf_token %}
                         <input type="hidden" name="event" value="{{ event.event.event_name }}">

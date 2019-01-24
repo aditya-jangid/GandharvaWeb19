@@ -7,14 +7,29 @@ html, body {
     background-color: #fff;
 }
 
+pre {
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    color: #000;
+}
+
+p {
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    color: #000;
+}
+
 .colorlib-heading {
-    font-size: 18px;
-    margin-bottom:12px;
-    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 12px;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 5px;
     line-height: 1.8;
     position: relative;
+    color: #000;
 }
 
 .colorlib-heading:after {
@@ -30,16 +45,20 @@ html, body {
 .colorlib-heading span {
     display: block;
 }
-.team{
+
+.team {
     margin-bottom: 2vh;
     font-weight: 300;
 }
-.contact{
+
+.contact {
     margin-bottom: 1vh;
 }
-.contact p{
+
+.contact p {
     margin: 0;
 }
+
 @media screen and (max-width: 768px) {
     .colorlib-heading {
         margin-bottom: 3em;
@@ -84,7 +103,7 @@ html, body {
     padding-bottom: 1vh;
     color: #000;
     opacity: 1;
-    margin-bottom:1vh;
+    margin-bottom: 1vh;
 }
 
 .eventButtons {
