@@ -8,11 +8,20 @@ html, body {
     background-color: #f2f2f2;
 }
 
+/*.mainTitle {*/
+/*position: absolute;*/
+/*top: 26vh;*/
+/*left: 38vw;*/
+/*text-align: center;*/
+/*}*/
+
 .mainTitle {
     position: absolute;
-    top: 26vh;
-    left: 38vw;
-    text-align: center;
+    top: 16vh;
+    left: 0;
+    right: 0;
+    margin-right: 14%;
+    margin-left: 14%;
 }
 
 .mainTitle p {
@@ -173,7 +182,7 @@ html, body {
 
     .mainTitle {
         top: 17.4vh;
-        left:10%;
+        left: 10%;
     }
 
     .mainTitle h3 {
