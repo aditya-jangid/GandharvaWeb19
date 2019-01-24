@@ -8,11 +8,4 @@ $(document).ready(function () {
             $('.navbar').removeClass('solid');
         }
     });
-
-    var width = $(window).width();
-    $(window).resize(function () {
-        if (width <= '600') {
-            $('.navbar').addClass('solid');
-        }
-    });
 });
