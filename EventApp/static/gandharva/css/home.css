@@ -181,9 +181,9 @@ html, body {
     }
 
     .mainTitle {
-        top: 17.4vh;
+        top: 17.6vh;
         margin-right:1%;
-        margin-left: 2.4%;
+        margin-left: 3%;
     }
 
     .mainTitle h3 {
@@ -198,6 +198,10 @@ html, body {
         font-size: 16px;
     }
 
+    #countdown{
+        margin-left: 10%;
+        padding-left: 0;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

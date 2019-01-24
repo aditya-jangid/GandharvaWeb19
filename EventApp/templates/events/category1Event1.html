@@ -9,20 +9,20 @@
     <div class="container-fluid"
          style="background:linear-gradient(45deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('{% static dept.department.banner_src %}');width: 100%;height:186px;background-size:cover;">
         <h1 class="title" data-sal="slide-up" data-sal-easing="ease-out-bounce"
-            data-sal-delay="500" data-sal-duration="800">{{ event.event_name }}</h1>
+            data-sal-delay="100" data-sal-duration="500">{{ event.event_name }}</h1>
     </div>
     <br>
     <div class="container">
         {% if event.objective %}
-            <h3 class="colorlib-heading" data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">
+            <h3 class="colorlib-heading" data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="100" data-sal-duration="500">
                 Objective</h3>
-            <p data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">{{ event.objective }}</p>
+            <p data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="100" data-sal-duration="500">{{ event.objective }}</p>
         {% endif %}
     </div>
     <br>
     <div class="container">
         {% if event.rounds %}
-            <h3 class="colorlib-heading" data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">
+            <h3 class="colorlib-heading" data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="100" data-sal-duration="500">
                 Rounds</h3>
             <pre data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">{{ event.rounds }}</pre>
         {% endif %}
@@ -38,9 +38,9 @@
     </div>
     <br>
     <div class="container">
-        <h3 class="colorlib-heading" data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">Team and
+        <h3 class="colorlib-heading" data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="100" data-sal-duration="500">Team and
             Fee Structure</h3>
-        <p data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="300">Max {{ event.team_size }}
+        <p data-sal="slide-up" data-sal-easing="ease-out-bounce" data-sal-delay="100" data-sal-duration="500">Max {{ event.team_size }}
             Participants per Team & ₹ {{ event.entry_fee }} per team.</p>
     </div>
     <br><br>
