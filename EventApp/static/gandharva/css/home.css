@@ -11,7 +11,7 @@ html, body {
 .mainTitle {
     position: absolute;
     top: 26vh;
-    left: 32vw;
+    left: 38vw;
     text-align: center;
 }
 
@@ -168,12 +168,12 @@ html, body {
     }
 
     .mainTitle h1 {
-        font-size: 52px;
+        font-size: 50px;
     }
 
     .mainTitle {
         top: 20vh;
-        left: 8.6vw;
+        left: 10vw;
     }
 
     .mainTitle h3 {
