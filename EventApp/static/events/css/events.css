@@ -32,6 +32,7 @@ html, body {
 }
 .team{
     margin-bottom: 2vh;
+    font-weight: 300;
 }
 .contact{
     margin-bottom: 1vh;
