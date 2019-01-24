@@ -11,7 +11,7 @@ html, body {
 .mainTitle {
     position: absolute;
     top: 30vh;
-    left: 32.6vw;
+    left: 38vw;
     text-align: center;
     /*width: 100%;*/
 
@@ -169,8 +169,8 @@ html, body {
     }
 
     .mainTitle {
-        top: 100px;
-        left: 8vw;
+        top: 110px;
+        left:8.6vw;
     }
 
     .mainTitle h3 {
@@ -184,6 +184,7 @@ html, body {
     .mainTitle p {
         font-size: 16px;
     }
+
 
 }
 
