@@ -2,7 +2,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login , logout
 from django.urls import reverse
-from EventApp.models import Department, EventMaster, Carousel, SponsorMaster, RoleAssignment, RoleMaster, MyUser, EventDepartment,GandharvaHome
+from EventApp.models import Department, EventMaster, Carousel, SponsorMaster, RoleAssignment, RoleMaster, MyUser, EventDepartment,GandharvaHome,College
 from .forms import UserRegistration , ContactUsForm, RoleMasterForm
 from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
@@ -74,6 +74,8 @@ def contactus(request):
 
 #Registration for normal User and log in user after registration Immediately
 def register(request):
+    dept = Department.objects.all();
+    coll = College.objects.all();
     if request.method == 'POST':
         form = UserRegistration(request.POST)
         if form.is_valid():
@@ -101,7 +103,7 @@ def register(request):
     else:
         form = UserRegistration()
 
-    return render(request, 'events/register.html', {'form': form})
+    return render(request, 'events/register.html', {'form': form,'colleges':coll,'depts': dept})
 
 
 # Activates the user after clicking on the email link

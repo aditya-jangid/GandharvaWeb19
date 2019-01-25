@@ -4,9 +4,35 @@ from django.contrib.auth.models import AbstractUser, PermissionsMixin
 # Create your models here.
 
 
+
+#Use this table to store college name for Campaigning.
+class College(models.Model):
+
+    name = models.CharField(max_length=100)
+    address = models.TextField(max_length=200, blank=True)
+
+    def __str__(self):
+        return self.name
+
+# model for Department
+class Department(models.Model):
+    dep_id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=30)
+    description = models.TextField()
+    img = models.CharField(max_length=200)
+    link_to = models.CharField(max_length=200)
+    banner_src = models.CharField(max_length=500,blank = True)
+
+    def __str__(self):
+        return self.name
+
+
 #Abstract User , it is the extension of the base User model which can be customized
 class MyUser(AbstractUser):
     email = models.EmailField(max_length=100, unique=True)
+    user_coll = models.ForeignKey(College,on_delete = models.PROTECT,blank = True, null =True)
+    user_year = models.CharField(max_length = 20 , blank = True, default= None, null = True)
+    user_dept = models.ForeignKey(Department,on_delete=models.PROTECT, null = True )
 
 
     def __str__(self):
@@ -27,19 +53,6 @@ class RoleAssignment (models.Model):
 
     def __int__(self):
         return self.role.name
-
-
-# model for Department
-class Department(models.Model):
-    dep_id = models.IntegerField(primary_key=True)
-    name = models.CharField(max_length=30)
-    description = models.TextField()
-    img = models.CharField(max_length=200)
-    link_to = models.CharField(max_length=200)
-    banner_src = models.CharField(max_length=500,blank = True)
-
-    def __str__(self):
-        return self.name
 
 
 # EventMaster to handle the events section
@@ -104,11 +117,3 @@ class GandharvaHome(models.Model):
         return self.title
 
 
-#Use this table to store college name for Campaigning.
-class College(models.Model):
-
-    name = models.CharField(max_length=100)
-    address = models.TextField(max_length=200, blank=True)
-
-    def __str__(self):
-        return self.name
