@@ -4,7 +4,7 @@ from .models import ContactUs, MyUser , Department, RoleMaster
 
 class UserRegistration(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
-    email = forms.CharField(max_length=75, required = True )
+    email = forms.EmailField(max_length=75, required = True )
     class Meta:
         model = MyUser
         fields = ['username','email','password']

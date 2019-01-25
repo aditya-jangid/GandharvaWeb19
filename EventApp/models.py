@@ -6,8 +6,10 @@ from django.contrib.auth.models import AbstractUser, PermissionsMixin
 
 #Abstract User , it is the extension of the base User model which can be customized
 class MyUser(AbstractUser):
+    email = models.EmailField(max_length=100, unique=True)
 
-  def __str__(self):
+
+    def __str__(self):
      return self.username
 
 #RoleMaster contains all the vaarious roles of users
