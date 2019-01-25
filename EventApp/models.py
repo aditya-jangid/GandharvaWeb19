@@ -69,6 +69,7 @@ class SponsorMaster(models.Model):
     sponsor_name = models.CharField(max_length=30)
     sponsor_logo = models.CharField(max_length=200)
     sponsor_info = models.CharField(max_length=200, default='No Info. Available')
+    sponsor_type = models.CharField(max_length=30, blank=True)
 
     def __str__(self):
         return self.sponsor_name
@@ -99,3 +100,13 @@ class GandharvaHome(models.Model):
 
     def __str__(self):
         return self.title
+
+
+#Use this table to store college name for Campaigning.
+class College(models.Model):
+
+    name = models.CharField(max_length=100)
+    address = models.TextField(max_length=200, blank=True)
+
+    def __str__(self):
+        return self.name

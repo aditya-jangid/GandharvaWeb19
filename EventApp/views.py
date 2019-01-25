@@ -36,8 +36,8 @@ def comingSoon(request):
 
 #Events page of all Departments
 def event(request):
-    if request.POST:
-        dept = request.POST.get('dept')
+    if request.GET:
+        dept = request.GET.get('dept')
         dept_choose = Department.objects.get(name=dept)
     else:
         dept = 'All Events'
@@ -46,11 +46,11 @@ def event(request):
         'events': EventDepartment.objects.filter(department = dept_choose),
         'dept_choosen': dept_choose
     }
-    return render(request, 'events/event1.html', args1)
+    return render(request, 'events/newEvent.html', args1)
 
 #Details of Individual Events
 def details(request):
-    event_name = request.POST.get('event')
+    event_name = request.GET.get('event')
 
     arg = {
         'events_list': EventMaster.objects.all(),
@@ -76,6 +76,7 @@ def contactus(request):
     return render(request, 'gandharva/contactus.html',{'form':form, 'success_form' : success_form})
 
 #Registration for normal User and log in user after registration Immediately
+@user_passes_test(lambda u: u.is_superuser)
 def register(request):
     if request.method == 'POST':
         form = UserRegistration(request.POST)
@@ -96,11 +97,13 @@ def register(request):
     return render(request, 'events/register.html', {'form': form})
 
 #logout Option View appears only after login
+@user_passes_test(lambda u: u.is_superuser)
 def user_logout(request):
         logout(request)
         return redirect('home')
 
 #Login for user to Existing Account
+@user_passes_test(lambda u: u.is_superuser)
 def user_login(request):
 
         if request.method == 'POST':

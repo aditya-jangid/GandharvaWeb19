@@ -7,10 +7,68 @@ html, body {
     background-color: #fff;
 }
 
+pre {
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    color: #000;
+}
+
+p {
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    color: #000;
+}
+
+.colorlib-heading {
+    font-size: 24px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 1.8;
+    position: relative;
+    color: #000;
+}
+
+.colorlib-heading:after {
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    content: '';
+    background: #004E8A;
+}
+
+.colorlib-heading span {
+    display: block;
+}
+
+.team {
+    margin-bottom: 2vh;
+    font-weight: 300;
+}
+
+.contact {
+    margin-bottom: 1vh;
+}
+
+.contact p {
+    margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .colorlib-heading {
+        margin-bottom: 3em;
+    }
+}
+
 .title {
     text-align: center;
     font-weight: bold;
-    padding-top: 140px;
+    padding-top: 100px;
     word-wrap: break-word;
     color: #fff;
     text-shadow: 2px 2px #000000;
@@ -29,23 +87,23 @@ html, body {
 
 .eventTitle {
     z-index: 100;
-    padding-top:1vh;
+    padding-top: 1vh;
     padding-bottom: 0.5vh;
-    color: #fff;
+    color: #000;
     opacity: 1;
     font-weight: bold;
     word-wrap: break-word;
     hyphens: auto;
-    text-shadow: 2px 2px #000000;
+    /*text-shadow: 2px 2px #000000;*/
 }
 
 .eventDescription {
     z-index: 100;
     padding-top: 0.5vh;
-    padding-bottom: 0.5vh;
-    color: #fff;
+    padding-bottom: 1vh;
+    color: #000;
     opacity: 1;
-    font-weight: bold;
+    margin-bottom: 1vh;
 }
 
 .eventButtons {
@@ -58,9 +116,11 @@ html, body {
     text-align: center;
     transition: all 0.5s;
     cursor: pointer;
-    margin-top: 0.5vh;
-    margin-bottom: 2vh;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
     font-weight: bold;
+    /*position: absolute;*/
+    /*bottom: 2vh;*/
 }
 
 .eventButtons:hover {
@@ -115,10 +175,10 @@ html, body {
 }
 
 pre {
-    white-space: pre-wrap;       /* Since CSS 2.1 */
-    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-    white-space: -o-pre-wrap;    /* Opera 7 */
-    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    white-space: pre-wrap; /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
 }
 
 /* Extra small devices (phones, 600px and down) */

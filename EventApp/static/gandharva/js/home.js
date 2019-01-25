@@ -12,7 +12,40 @@ $("#countdown").countdown({
         // callback function
     });
 
-// $(document).ready(function () {
+//Owl
+// var owl = $('.owl-carousel');
+//
+// $('.testimonial-carousel-controls .prev').click(function () {
+//     owl.trigger('prev.owl.carousel');
+// });
+//
+// $('.testimonial-carousel-controls .next').click(function () {
+//     owl.trigger('next.owl.carousel');
+// });
+//
+//
+// owl.owlCarousel({
+//     loop: false,
+//     margin: 10,
+//     navigation: false,
+//     responsiveClass: true,
+//     responsive: {
+//         0: {
+//             items: 1,
+//             loop: true
+//         },
+//         600: {
+//             items: 3,
+//         },
+//         1000: {
+//             items: 5,
+//         }
+//     }
+// });
+
+
+
+$(document).ready(function () {
     $(".testimonial-carousel").slick({
         infinite: !0,
         slidesToShow: 4,
@@ -38,7 +71,7 @@ $("#countdown").countdown({
             }
         }]
     });
-// });
+});
 
 particlesJS('particles-js',
 

@@ -13,31 +13,35 @@ html, body {
 /*************************
 ******Navbar CSS****
 **************************/
+nav {
+    color: #000000
+}
+
 .navbar {
-    background-color: #1B7B98 !important;
+    background-color: #004E8A !important;
     opacity: 1;
     padding-bottom: 0;
 }
 
 nav .navbar-nav li a {
-    color: #000000 !important;
+    color: #fff !important;
     opacity: 1;
 }
 
 .dropdownStyle {
-    color: white !important;
+    color: white ;
     font-weight: bold;
     margin: 4px;
 }
 
 .navbar-nav > li > .dropdown-menu {
     opacity: 1;
-    background-color: #1B7B98;
+    background-color: #004E8A;
 }
 
 .navbar-nav > li > .dropdown-menu :hover {
     background-color: #fff;
-    color: #16728f !important;
+    color: #004E8A !important;
 }
 
 .solid {
@@ -46,16 +50,15 @@ nav .navbar-nav li a {
 
 .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
     background-color: #fff;
-    color: #16728f !important;
+    color: #004E8A !important;
 }
 
 nav li .active a {
     background-color: #fff;
-    color: #16728f !important;
+    color: #004E8A !important;
 }
 
 .nav.navbar-nav li a {
-    color: white !important;
     font-weight: bold;
     font-size: 18px;
     margin: 4px;

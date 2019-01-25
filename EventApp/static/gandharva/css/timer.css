@@ -1,3 +1,47 @@
+/*------------------------------------------------------------------
+Project:  ComingSoon
+Version:  
+Last change:  
+Assigned to:  Bach Le
+Primary use:  
+-------------------------------------------------------------------*/
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('../fonts/Poppins/Poppins-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-Light;
+  src: url('../fonts/Poppins/Poppins-Light.ttf'); 
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url('../fonts/Poppins/Poppins-Bold.ttf'); 
+}
+
+@font-face {
+  font-family: PlayfairDisplay-Regular;
+  src: url('../fonts/PlayfairDisplay/PlayfairDisplay-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: PlayfairDisplay-Italic;
+  src: url('../fonts/PlayfairDisplay/PlayfairDisplay-Italic.ttf'); 
+}
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ RS PLUGIN ]*/
+/*---------------------------------------------*/
 .container {max-width: 1200px;}
 
 
@@ -98,6 +142,7 @@ input.input100 {
   right: 12px;
   pointer-events: none;
 
+  font-family: Poppins-Regular;
   color: #c80000;
   font-size: 14px;
   line-height: 1.4;
@@ -114,6 +159,7 @@ input.input100 {
 
 .alert-validate::after {
   content: "\f071";
+  font-family: FontAwesome;
   display: block;
   position: absolute;
   color: #c80000;
@@ -155,6 +201,7 @@ input.input100 {
 /*//////////////////////////////////////////////////////////////////
 [ S-Text 0 - 15 ]*/
 .s1-txt1 {
+  font-family: Poppins-Regular;
   font-size: 15px;
   color: #fff;
   line-height: 1.2;
@@ -166,12 +213,14 @@ input.input100 {
 
 /*---------------------------------------------*/
 .m2-txt1 {
+  font-family: PlayfairDisplay-Regular;
   font-size: 25px;
   color: #fff;
   line-height: 1.2;
 }
 
 .m2-txt2 {
+  font-family: PlayfairDisplay-Italic;
   font-size: 18px;
   color: #fff;
   line-height: 1;
@@ -180,12 +229,15 @@ input.input100 {
 /*//////////////////////////////////////////////////////////////////
 [ L-Text >= 26 ]*/
 .l1-txt1 {
+  font-family: Poppins-Bold;
   font-size: 48px;
   color: #fff;
   line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .l1-txt2 {
+  font-family: Poppins-Light;
   font-size: 70px;
   color: #fff;
   line-height: 1;
@@ -285,7 +337,7 @@ input.input100 {
   background: -o-linear-gradient(bottom, #aa076b, #61045f);
   background: -moz-linear-gradient(bottom, #aa076b, #61045f);
   background: linear-gradient(bottom, #aa076b, #61045f);
-  opacity: 0.4;
+  opacity: 0.9;
 }
 
 .overlay1::after {
